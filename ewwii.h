@@ -3,7 +3,9 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-typedef struct HostHandle HostHandle;
+typedef struct HostHandle {
+  const void *inner;
+} HostHandle;
 
 typedef struct RawMetadata {
   const char *id;
@@ -15,6 +17,10 @@ void ewwii_log(const struct HostHandle *handle, const char *msg);
 void ewwii_warn(const struct HostHandle *handle, const char *msg);
 
 void ewwii_error(const struct HostHandle *handle, const char *msg);
+
+uint64_t *ewwii_inject_css(const struct HostHandle *handle, const char *css);
+
+void ewwii_inject_nbcl(const struct HostHandle *handle, const char *nbcl);
 
 void ewwii_register_signal(const struct HostHandle *handle, const char *name, const char *initial);
 

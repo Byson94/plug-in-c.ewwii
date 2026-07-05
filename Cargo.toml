@@ -11,3 +11,11 @@ cbindgen = "0.29.4"
 
 [dependencies]
 ewwii_plugin_api = { path = "../../ewwii/crates/plugin_api" }
+
+[profile.release]
+opt-level = "z"
+lto = "fat"
+panic = "abort"
+strip = "symbols"
+codegen-units = 1
+
