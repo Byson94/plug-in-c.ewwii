@@ -4,7 +4,7 @@ mod entry;
 mod utils;
 mod macro_defs;
 
-use std::ffi::CStr;
+use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 use ewwii_plugin_api::EwwiiAPI;
 
@@ -94,6 +94,19 @@ pub unsafe extern "C" fn ewwii_inject_nbcl(handle: *const HostHandle, nbcl: *con
     });
 }
 
+// == Emissions & Listening ===
+#[unsafe(no_mangle)]
+pub unsafe extern "C" fn ewwii_emit(handle: *const HostHandle, signal: *const c_char, data: *const c_char) {
+    call!({
+        let host = unsafe { (*handle).as_api() };
+
+        let sig_c_str = unsafe { CStr::from_ptr(signal).to_string_lossy().into_owned() };
+        let data_c_str = unsafe { CStr::from_ptr(data).to_string_lossy().into_owned() };
+
+        host.emit(&sig_c_str, data_c_str);
+    });
+}
+
 // === Signals API ===
 
 #[unsafe(no_mangle)]
@@ -114,4 +127,21 @@ pub unsafe extern "C" fn ewwii_update_signal(handle: *const HostHandle, name: *c
         let val_str = unsafe { CStr::from_ptr(value).to_string_lossy().into_owned() };
         host.update_signal(&name_str, val_str);
     });
+}
+
+#[unsafe(no_mangle)]
+pub unsafe extern "C" fn ewwii_signal_value(handle: *const HostHandle, name: *const c_char) -> *const c_char {
+    let result = call!({
+        let host = unsafe { (*handle).as_api() };
+        let name_str = unsafe { CStr::from_ptr(name).to_string_lossy().into_owned() };
+        host.signal_value(&name_str).resolve().ok()
+    });
+
+    match result {
+        Some(val) => {
+            let c_string = CString::new(val).expect("CString conversion failed");
+            c_string.into_raw()
+        },
+        None => std::ptr::null_mut(),
+    }
 }
