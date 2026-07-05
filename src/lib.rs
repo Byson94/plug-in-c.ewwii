@@ -4,13 +4,12 @@ mod entry;
 mod utils;
 mod macro_defs;
 
-use std::ffi::{CStr, CString};
-use std::os::raw::c_char;
-use ewwii_plugin_api::EwwiiAPI;
+use std::ffi::{CStr, CString, c_char, c_void};
+use ewwii_plugin_api::{EwwiiAPI, ListenHandleFn, ListenHandleFnExt};
 
 #[repr(C)]
 pub struct HostHandle {
-    pub inner: *const std::ffi::c_void,
+    pub inner: *const c_void,
 }
 
 impl HostHandle {
@@ -104,6 +103,32 @@ pub unsafe extern "C" fn ewwii_emit(handle: *const HostHandle, signal: *const c_
         let data_c_str = unsafe { CStr::from_ptr(data).to_string_lossy().into_owned() };
 
         host.emit(&sig_c_str, data_c_str);
+    });
+}
+
+pub type CListenCallback = unsafe extern "C" fn(*const c_char, *const c_char);
+
+#[unsafe(no_mangle)]
+pub unsafe extern "C" fn ewwii_listen(
+    handle: *const HostHandle,
+    signal: *const c_char,
+    callback: CListenCallback,
+) {
+    call!({
+        let host = unsafe { (*handle).as_api() };
+        let sig_str = unsafe { CStr::from_ptr(signal).to_string_lossy() };
+
+        host.listen(&sig_str, ListenHandleFn::new(move |info| {
+            let c_pid = std::ffi::CString::new(info.pid).unwrap_or_default();
+            let c_data = std::ffi::CString::new(info.data).unwrap_or_default();
+            
+            unsafe {
+                callback(
+                    c_pid.as_ptr(),
+                    c_data.as_ptr(),
+                );
+            }
+        }));
     });
 }
 

@@ -7,6 +7,8 @@ typedef struct HostHandle {
   const void *inner;
 } HostHandle;
 
+typedef void (*CListenCallback)(const char*, const char*);
+
 typedef struct RawMetadata {
   const char *id;
   const char *version;
@@ -25,6 +27,8 @@ void ewwii_remove_css(const struct HostHandle *handle, uint64_t *idx_ptr);
 void ewwii_inject_nbcl(const struct HostHandle *handle, const char *nbcl);
 
 void ewwii_emit(const struct HostHandle *handle, const char *signal, const char *data);
+
+void ewwii_listen(const struct HostHandle *handle, const char *signal, CListenCallback callback);
 
 void ewwii_register_signal(const struct HostHandle *handle, const char *name, const char *initial);
 
