@@ -26,18 +26,17 @@ TEMPLATE_PLUGINC = textwrap.dedent('''
 
 DEFAULT_MAKEFILE = textwrap.dedent('''
     CC = gcc
-    CFLAGS = -fPIC -Wall
+    CFLAGS = -fPIC -Wall -I bindings
     LDFLAGS = -shared -ldl -lm -lrt
 
     PLUGIN_OUT = lib{plugin_name}.so
-    API_HEADER = bindings/ewwii.h
     RUST_BRIDGE = bindings/libpluginc_ewwii.a
     SOURCES = $(wildcard src/*.c)
 
     all: $(PLUGIN_OUT)
 
     $(PLUGIN_OUT): $(SOURCES)
-    \t$(CC) $(CFLAGS) -include $(API_HEADER) -o $@ $^ $(RUST_BRIDGE) $(LDFLAGS)
+    \t$(CC) $(CFLAGS) -o $@ $^ $(RUST_BRIDGE) $(LDFLAGS)
 
     clean:
     \trm $(PLUGIN_OUT)
