@@ -2,6 +2,7 @@
 
 mod entry;
 mod utils;
+mod future;
 mod macro_defs;
 
 use std::ffi::{CStr, CString, c_char, c_void};
@@ -58,18 +59,24 @@ pub unsafe extern "C" fn ewwii_error(handle: *const HostHandle, msg: *const c_ch
 // === Injections ===
 
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn ewwii_inject_css(handle: *const HostHandle, css: *const c_char) -> *mut u64 {
+pub unsafe extern "C" fn ewwii_inject_css(
+    handle: *const HostHandle, 
+    css: *const c_char,
+    future_handler: extern "C" fn(*const HostHandle, *mut u64)
+) {
     let result = call!({
         let host = unsafe { (*handle).as_api() };
         let c_str = unsafe { CStr::from_ptr(css) };
         c_str.to_str().ok().and_then(|s| {
-            host.inject_css(s).resolve().ok() 
+            Some(host.inject_css(s))
         })
     });
 
     match result {
-        Some(val) => Box::into_raw(Box::new(val)),
-        None => std::ptr::null_mut(),
+        Some(val) => {
+            future::start_u64_worker(handle, future_handler, val);
+        },
+        None => {}
     }
 }
 
@@ -204,18 +211,21 @@ pub unsafe extern "C" fn ewwii_update_signal(handle: *const HostHandle, name: *c
 }
 
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn ewwii_signal_value(handle: *const HostHandle, name: *const c_char) -> *const c_char {
+pub unsafe extern "C" fn ewwii_signal_value(
+    handle: *const HostHandle, 
+    name: *const c_char,
+    future_handler: extern "C" fn(*const HostHandle, *const c_char)
+) {
     let result = call!({
         let host = unsafe { (*handle).as_api() };
         let name_str = unsafe { CStr::from_ptr(name).to_string_lossy().into_owned() };
-        host.signal_value(&name_str).resolve().ok()
+        Some(host.signal_value(&name_str))
     });
 
     match result {
         Some(val) => {
-            let c_string = CString::new(val).expect("CString conversion failed");
-            c_string.into_raw()
+            future::start_string_worker(handle, future_handler, val);
         },
-        None => std::ptr::null_mut(),
+        None => {}
     }
 }

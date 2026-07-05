@@ -27,7 +27,9 @@ void ewwii_warn(const struct HostHandle *handle, const char *msg);
 
 void ewwii_error(const struct HostHandle *handle, const char *msg);
 
-uint64_t *ewwii_inject_css(const struct HostHandle *handle, const char *css);
+void ewwii_inject_css(const struct HostHandle *handle,
+                      const char *css,
+                      void (*future_handler)(const struct HostHandle*, uint64_t*));
 
 void ewwii_remove_css(const struct HostHandle *handle, uint64_t *idx_ptr);
 
@@ -43,7 +45,9 @@ void ewwii_register_signal(const struct HostHandle *handle, const char *name, co
 
 void ewwii_update_signal(const struct HostHandle *handle, const char *name, const char *value);
 
-const char *ewwii_signal_value(const struct HostHandle *handle, const char *name);
+void ewwii_signal_value(const struct HostHandle *handle,
+                        const char *name,
+                        void (*future_handler)(const struct HostHandle*, const char*));
 
 const char *ewwii_api_version(void);
 

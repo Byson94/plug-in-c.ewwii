@@ -33,9 +33,9 @@ pub unsafe fn ewwii_plugin_init(id_ptr: *const u8, id_len: usize) {
     let id_cow = ::std::string::String::from_utf8_lossy(id_bytes);
     let id_str: &str = &id_cow;
 
-    let proxy = ewwii_plugin_api::proxy::HostProxy::new(id_str);
-    let trait_obj: &dyn EwwiiAPI = &proxy;
-    let proxy_ptr: *const dyn EwwiiAPI = trait_obj as *const dyn EwwiiAPI;
+    // leaking as it should exist for the lifetime
+    let proxy = Box::new(ewwii_plugin_api::proxy::HostProxy::new(id_str));
+    let proxy_ptr: *const dyn EwwiiAPI = Box::leak(proxy);
     
     let handle = HostHandle { 
         inner: proxy_ptr as *const std::ffi::c_void 
