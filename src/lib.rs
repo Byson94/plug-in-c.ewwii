@@ -93,7 +93,56 @@ pub unsafe extern "C" fn ewwii_inject_nbcl(handle: *const HostHandle, nbcl: *con
     });
 }
 
-// == Emissions & Listening ===
+// === Getters ===
+
+#[repr(C)]
+pub struct RuntimePaths {
+    pub log_file: *const c_char,
+    pub log_dir: *const c_char,
+    pub ipc_socket_file: *const c_char,
+    pub config_dir: *const c_char,
+}
+
+#[unsafe(no_mangle)]
+pub unsafe extern "C" fn ewwii_get_runtime_paths(handle: *const HostHandle) -> *const RuntimePaths {
+    let result = call!({
+        let host = unsafe { (*handle).as_api() };
+        host.get_runtime_paths().resolve().ok()
+    });
+
+    match result {
+        Some(val) => {
+            let log_file = {
+                let c_string = CString::new(val.log_file).expect("CString conversion failed");
+                c_string.into_raw()
+            };
+            let log_dir = {
+                let c_string = CString::new(val.log_dir).expect("CString conversion failed");
+                c_string.into_raw()
+            };
+            let ipc_socket_file = {
+                let c_string = CString::new(val.ipc_socket_file).expect("CString conversion failed");
+                c_string.into_raw()
+            };
+            let config_dir = {
+                let c_string = CString::new(val.config_dir).expect("CString conversion failed");
+                c_string.into_raw()
+            };
+
+            let rt_paths = RuntimePaths {
+                log_file,
+                log_dir,
+                ipc_socket_file,
+                config_dir,
+            };
+            
+            &rt_paths as *const RuntimePaths
+        },
+        None => std::ptr::null_mut(),
+    }
+}
+
+// === Emissions & Listening ===
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_emit(handle: *const HostHandle, signal: *const c_char, data: *const c_char) {
     call!({

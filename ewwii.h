@@ -7,6 +7,13 @@ typedef struct HostHandle {
   const void *inner;
 } HostHandle;
 
+typedef struct RuntimePaths {
+  const char *log_file;
+  const char *log_dir;
+  const char *ipc_socket_file;
+  const char *config_dir;
+} RuntimePaths;
+
 typedef void (*CListenCallback)(const char*, const char*);
 
 typedef struct RawMetadata {
@@ -25,6 +32,8 @@ uint64_t *ewwii_inject_css(const struct HostHandle *handle, const char *css);
 void ewwii_remove_css(const struct HostHandle *handle, uint64_t *idx_ptr);
 
 void ewwii_inject_nbcl(const struct HostHandle *handle, const char *nbcl);
+
+const struct RuntimePaths *ewwii_get_runtime_paths(const struct HostHandle *handle);
 
 void ewwii_emit(const struct HostHandle *handle, const char *signal, const char *data);
 
