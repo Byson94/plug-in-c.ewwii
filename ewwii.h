@@ -20,6 +20,8 @@ void ewwii_error(const struct HostHandle *handle, const char *msg);
 
 uint64_t *ewwii_inject_css(const struct HostHandle *handle, const char *css);
 
+void ewwii_remove_css(const struct HostHandle *handle, uint64_t *idx_ptr);
+
 void ewwii_inject_nbcl(const struct HostHandle *handle, const char *nbcl);
 
 void ewwii_register_signal(const struct HostHandle *handle, const char *name, const char *initial);

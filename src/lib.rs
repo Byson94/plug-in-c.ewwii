@@ -75,6 +75,17 @@ pub unsafe extern "C" fn ewwii_inject_css(handle: *const HostHandle, css: *const
 }
 
 #[unsafe(no_mangle)]
+pub unsafe extern "C" fn ewwii_remove_css(handle: *const HostHandle, idx_ptr: *mut u64) {
+    call!({
+        if !idx_ptr.is_null() {
+            let idx = unsafe { *idx_ptr };
+            let host = unsafe { (*handle).as_api() };
+            host.remove_css(idx);
+        }
+    });
+}
+
+#[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_inject_nbcl(handle: *const HostHandle, nbcl: *const c_char) {
     call!({
         let host = unsafe { (*handle).as_api() };
