@@ -1,13 +1,13 @@
 #![allow(clippy::missing_safety_doc)]
 
 mod entry;
-mod utils;
 mod future;
 mod macro_defs;
+mod utils;
 
-use std::ffi::{CStr, c_char, c_void};
 use ewwii_plugin_api::{EwwiiAPI, ListenHandleFn, ListenHandleFnExt};
 use future::CRuntimePaths;
+use std::ffi::{CStr, c_char, c_void};
 
 #[repr(C)]
 pub struct HostHandle {
@@ -35,7 +35,9 @@ pub unsafe extern "C" fn ewwii_log(handle: *const HostHandle, msg: *const c_char
     call!({
         let host = unsafe { (*handle).as_api() };
         let c_str = unsafe { CStr::from_ptr(msg) };
-        if let Ok(s) = c_str.to_str() { host.log(s); }
+        if let Ok(s) = c_str.to_str() {
+            host.log(s);
+        }
     });
 }
 
@@ -44,7 +46,9 @@ pub unsafe extern "C" fn ewwii_warn(handle: *const HostHandle, msg: *const c_cha
     call!({
         let host = unsafe { (*handle).as_api() };
         let c_str = unsafe { CStr::from_ptr(msg) };
-        if let Ok(s) = c_str.to_str() { host.warn(s); }
+        if let Ok(s) = c_str.to_str() {
+            host.warn(s);
+        }
     });
 }
 
@@ -53,7 +57,9 @@ pub unsafe extern "C" fn ewwii_error(handle: *const HostHandle, msg: *const c_ch
     call!({
         let host = unsafe { (*handle).as_api() };
         let c_str = unsafe { CStr::from_ptr(msg) };
-        if let Ok(s) = c_str.to_str() { host.error(s); }
+        if let Ok(s) = c_str.to_str() {
+            host.error(s);
+        }
     });
 }
 
@@ -61,22 +67,20 @@ pub unsafe extern "C" fn ewwii_error(handle: *const HostHandle, msg: *const c_ch
 
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_inject_css(
-    handle: *const HostHandle, 
+    handle: *const HostHandle,
     css: *const c_char,
-    future_handler: extern "C" fn(*const HostHandle, *mut u64)
+    future_handler: extern "C" fn(*const HostHandle, *mut u64),
 ) {
     let result = call!({
         let host = unsafe { (*handle).as_api() };
         let c_str = unsafe { CStr::from_ptr(css) };
-        c_str.to_str().ok().and_then(|s| {
-            Some(host.inject_css(s))
-        })
+        c_str.to_str().ok().and_then(|s| Some(host.inject_css(s)))
     });
 
     match result {
         Some(val) => {
             future::start_u64_worker(handle, future_handler, val);
-        },
+        }
         None => {}
     }
 }
@@ -97,7 +101,9 @@ pub unsafe extern "C" fn ewwii_inject_nbcl(handle: *const HostHandle, nbcl: *con
     call!({
         let host = unsafe { (*handle).as_api() };
         let c_str = unsafe { CStr::from_ptr(nbcl) };
-        if let Ok(s) = c_str.to_str() { host.inject_nbcl_bootstrap(s); }
+        if let Ok(s) = c_str.to_str() {
+            host.inject_nbcl_bootstrap(s);
+        }
     });
 }
 
@@ -124,14 +130,18 @@ pub unsafe extern "C" fn ewwii_get_runtime_paths(
     match result {
         Some(val) => {
             future::start_rt_paths_worker(handle, future_handler, val);
-        },
+        }
         None => {}
     }
 }
 
 // === Emissions & Listening ===
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn ewwii_emit(handle: *const HostHandle, signal: *const c_char, data: *const c_char) {
+pub unsafe extern "C" fn ewwii_emit(
+    handle: *const HostHandle,
+    signal: *const c_char,
+    data: *const c_char,
+) {
     call!({
         let host = unsafe { (*handle).as_api() };
 
@@ -154,24 +164,28 @@ pub unsafe extern "C" fn ewwii_listen(
         let host = unsafe { (*handle).as_api() };
         let sig_str = unsafe { CStr::from_ptr(signal).to_string_lossy() };
 
-        host.listen(&sig_str, ListenHandleFn::new(move |info| {
-            let c_pid = std::ffi::CString::new(info.pid).unwrap_or_default();
-            let c_data = std::ffi::CString::new(info.data).unwrap_or_default();
-            
-            unsafe {
-                callback(
-                    c_pid.as_ptr(),
-                    c_data.as_ptr(),
-                );
-            }
-        }));
+        host.listen(
+            &sig_str,
+            ListenHandleFn::new(move |info| {
+                let c_pid = std::ffi::CString::new(info.pid).unwrap_or_default();
+                let c_data = std::ffi::CString::new(info.data).unwrap_or_default();
+
+                unsafe {
+                    callback(c_pid.as_ptr(), c_data.as_ptr());
+                }
+            }),
+        );
     });
 }
 
 // === Signals API ===
 
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn ewwii_register_signal(handle: *const HostHandle, name: *const c_char, initial: *const c_char) {
+pub unsafe extern "C" fn ewwii_register_signal(
+    handle: *const HostHandle,
+    name: *const c_char,
+    initial: *const c_char,
+) {
     call!({
         let host = unsafe { (*handle).as_api() };
         let name_str = unsafe { CStr::from_ptr(name).to_string_lossy().into_owned() };
@@ -181,7 +195,11 @@ pub unsafe extern "C" fn ewwii_register_signal(handle: *const HostHandle, name: 
 }
 
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn ewwii_update_signal(handle: *const HostHandle, name: *const c_char, value: *const c_char) {
+pub unsafe extern "C" fn ewwii_update_signal(
+    handle: *const HostHandle,
+    name: *const c_char,
+    value: *const c_char,
+) {
     call!({
         let host = unsafe { (*handle).as_api() };
         let name_str = unsafe { CStr::from_ptr(name).to_string_lossy().into_owned() };
@@ -192,9 +210,9 @@ pub unsafe extern "C" fn ewwii_update_signal(handle: *const HostHandle, name: *c
 
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_signal_value(
-    handle: *const HostHandle, 
+    handle: *const HostHandle,
     name: *const c_char,
-    future_handler: extern "C" fn(*const HostHandle, *const c_char)
+    future_handler: extern "C" fn(*const HostHandle, *const c_char),
 ) {
     let result = call!({
         let host = unsafe { (*handle).as_api() };
@@ -205,7 +223,7 @@ pub unsafe extern "C" fn ewwii_signal_value(
     match result {
         Some(val) => {
             future::start_string_worker(handle, future_handler, val);
-        },
+        }
         None => {}
     }
 }
