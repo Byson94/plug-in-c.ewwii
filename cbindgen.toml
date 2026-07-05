@@ -1,5 +1,5 @@
 language = "C"
 
 [export]
-include = ["RawMetadata", "CFuture"]
+include = ["RawMetadata"]
 exclude = ["ewwii_plugin_create", "ewwii_plugin_init"]

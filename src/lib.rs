@@ -109,14 +109,6 @@ pub unsafe extern "C" fn ewwii_inject_nbcl(handle: *const HostHandle, nbcl: *con
 
 // === Getters ===
 
-#[repr(C)]
-pub struct RuntimePaths {
-    pub log_file: *const c_char,
-    pub log_dir: *const c_char,
-    pub ipc_socket_file: *const c_char,
-    pub config_dir: *const c_char,
-}
-
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_get_runtime_paths(
     handle: *const HostHandle,
