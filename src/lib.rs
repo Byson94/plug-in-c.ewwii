@@ -5,8 +5,9 @@ mod utils;
 mod future;
 mod macro_defs;
 
-use std::ffi::{CStr, CString, c_char, c_void};
+use std::ffi::{CStr, c_char, c_void};
 use ewwii_plugin_api::{EwwiiAPI, ListenHandleFn, ListenHandleFnExt};
+use future::CRuntimePaths;
 
 #[repr(C)]
 pub struct HostHandle {
@@ -111,41 +112,20 @@ pub struct RuntimePaths {
 }
 
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn ewwii_get_runtime_paths(handle: *const HostHandle) -> *const RuntimePaths {
+pub unsafe extern "C" fn ewwii_get_runtime_paths(
+    handle: *const HostHandle,
+    future_handler: extern "C" fn(*const HostHandle, *const CRuntimePaths),
+) {
     let result = call!({
         let host = unsafe { (*handle).as_api() };
-        host.get_runtime_paths().resolve().ok()
+        Some(host.get_runtime_paths())
     });
 
     match result {
         Some(val) => {
-            let log_file = {
-                let c_string = CString::new(val.log_file).expect("CString conversion failed");
-                c_string.into_raw()
-            };
-            let log_dir = {
-                let c_string = CString::new(val.log_dir).expect("CString conversion failed");
-                c_string.into_raw()
-            };
-            let ipc_socket_file = {
-                let c_string = CString::new(val.ipc_socket_file).expect("CString conversion failed");
-                c_string.into_raw()
-            };
-            let config_dir = {
-                let c_string = CString::new(val.config_dir).expect("CString conversion failed");
-                c_string.into_raw()
-            };
-
-            let rt_paths = RuntimePaths {
-                log_file,
-                log_dir,
-                ipc_socket_file,
-                config_dir,
-            };
-            
-            &rt_paths as *const RuntimePaths
+            future::start_rt_paths_worker(handle, future_handler, val);
         },
-        None => std::ptr::null_mut(),
+        None => {}
     }
 }
 
