@@ -1,3 +1,0 @@
-Window "test" {
-    Label "cstr" { text = "Hello Plugins!" }
-}

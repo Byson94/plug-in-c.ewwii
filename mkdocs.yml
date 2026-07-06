@@ -73,3 +73,6 @@ nav:
   - Getting Started:
       - Installation: getting-started.md
       - Creating your plugin: creating-your-plugin.md
+      - C API's:
+          - Overview: c_api/overview.md
+          - Simple API's: c_api/simple_c_apis.md

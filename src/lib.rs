@@ -30,6 +30,12 @@ pub struct RawMetadata {
 
 // === General API ===
 
+/// @breif Log a message
+///
+/// Log a message to ewwii with the appropriate plugin ID visible.
+///
+/// @param handle The host handle 
+/// @param msg The message to log
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_log(handle: *const HostHandle, msg: *const c_char) {
     call!({
@@ -41,6 +47,12 @@ pub unsafe extern "C" fn ewwii_log(handle: *const HostHandle, msg: *const c_char
     });
 }
 
+/// @breif Log a warning
+///
+/// Log a warning to ewwii with the appropriate plugin ID visible.
+///
+/// @param handle The host handle 
+/// @param msg The message to log
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_warn(handle: *const HostHandle, msg: *const c_char) {
     call!({
@@ -52,6 +64,12 @@ pub unsafe extern "C" fn ewwii_warn(handle: *const HostHandle, msg: *const c_cha
     });
 }
 
+/// @breif Log an error
+///
+/// Log an error to ewwii with the appropriate plugin ID visible.
+///
+/// @param handle The host handle 
+/// @param msg The message to log
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_error(handle: *const HostHandle, msg: *const c_char) {
     call!({
@@ -65,6 +83,13 @@ pub unsafe extern "C" fn ewwii_error(handle: *const HostHandle, msg: *const c_ch
 
 // === Injections ===
 
+/// @bref Inject custom CSS
+///
+/// Inject CSS into the core ewwii engine and handle the resulting CSS ID.
+///
+/// @param handle The host handle 
+/// @param css The css string to inject 
+/// @future_handler A function to call when the CSS ID is resolved
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_inject_css(
     handle: *const HostHandle,
@@ -85,6 +110,12 @@ pub unsafe extern "C" fn ewwii_inject_css(
     }
 }
 
+/// @breif Remove an injected CSS 
+///
+/// Remove an injected CSS from ewwii using the resolved CSS ID.
+///
+/// @param handle The host handle 
+/// @param idx_ptr The pointer to the resolved CSS ID which is to be removed
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_remove_css(handle: *const HostHandle, idx_ptr: *mut u64) {
     call!({
@@ -96,6 +127,12 @@ pub unsafe extern "C" fn ewwii_remove_css(handle: *const HostHandle, idx_ptr: *m
     });
 }
 
+/// @breif Inject nbcl
+///
+/// Inject nbcl into ewwii.
+///
+/// @param handle The host handle 
+/// @param nbcl The nbcl code to inject
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_inject_nbcl(handle: *const HostHandle, nbcl: *const c_char) {
     call!({
@@ -109,6 +146,12 @@ pub unsafe extern "C" fn ewwii_inject_nbcl(handle: *const HostHandle, nbcl: *con
 
 // === Getters ===
 
+/// @breif Get the runtime paths
+///
+/// Get the runtime paths like the configuration directory, socket file, etc.
+///
+/// @param handle The host handle 
+/// @future_handler The function to call when the CRuntimePaths are resolved
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_get_runtime_paths(
     handle: *const HostHandle,
@@ -128,6 +171,14 @@ pub unsafe extern "C" fn ewwii_get_runtime_paths(
 }
 
 // === Emissions & Listening ===
+
+/// @breif Emit a message
+///
+/// Emit a message which other plugins can see and work with the provided data.
+///
+/// @param handle The host handle 
+/// @signal The signal to emit 
+/// @data The data to attach with the signal
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_emit(
     handle: *const HostHandle,
@@ -146,6 +197,13 @@ pub unsafe extern "C" fn ewwii_emit(
 
 pub type CListenCallback = unsafe extern "C" fn(*const c_char, *const c_char);
 
+/// @breif Listen to emissions 
+///
+/// Listen to emissions made by other plugins and ewwii itself.
+///
+/// @param handle The host handle
+/// @param signal The signal to listen to 
+/// @param callback The function to call when emission is found
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_listen(
     handle: *const HostHandle,
@@ -172,6 +230,13 @@ pub unsafe extern "C" fn ewwii_listen(
 
 // === Signals API ===
 
+/// @breif Register a signal (GlobalVar)
+///
+/// Register a signal (GlobalVar) to ewwii which can be accessed from configuration.
+///
+/// @param handle The host handle 
+/// @param name The name of the signal 
+/// @param initial The initial value of the signal
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_register_signal(
     handle: *const HostHandle,
@@ -186,6 +251,13 @@ pub unsafe extern "C" fn ewwii_register_signal(
     });
 }
 
+/// @breif Update the value of a signal (GlobalVar)
+///
+/// Update the value of a signal (Global).
+///
+/// @param handle The host handle 
+/// @param name The name of the signal to update
+/// @param value The value to set
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_update_signal(
     handle: *const HostHandle,
@@ -200,6 +272,13 @@ pub unsafe extern "C" fn ewwii_update_signal(
     });
 }
 
+/// @breif Get the value of a signal (GlobalVar)
+///
+/// Get the value of a signal (GlobalVar) and do callback.
+///
+/// @param handle The host handle 
+/// @param name The name of the signal to get value of 
+/// @param future_handler The function to call back to after resolving value
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_signal_value(
     handle: *const HostHandle,

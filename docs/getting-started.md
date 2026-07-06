@@ -13,3 +13,10 @@ There are two critical files that are required to make the C bindings work:
 
 You can set it up manually, but we highly advice you to use our tool which will handle
 initialization, and managing of the C bindings a breeze.
+
+You can run this command to install `plugc-ewwii` locally:
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Byson94/plug-in-c.ewwii/refs/heads/main/plugc-ewwii/install.sh)"
+```
+
