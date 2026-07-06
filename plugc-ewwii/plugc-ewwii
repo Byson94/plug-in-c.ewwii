@@ -3,6 +3,7 @@
 import os
 import re
 import sys
+import json
 import argparse
 import textwrap
 import requests
@@ -65,19 +66,20 @@ def write_file(path, content):
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
 
-def download_assets(owner, repo, target_dir="bindings"):
+def download_assets(owner, repo, version):
+    target_dir = "bindings"
     os.makedirs(target_dir, exist_ok=True)
     
     required_files = ["ewwii.h", "libpluginc_ewwii.a"]
     
     for name in required_files:
-        download_url = f"https://github.com/{owner}/{repo}/releases/latest/download/{name}"
+        download_url = f"https://github.com/{owner}/{repo}/releases/{version}/download/{name}"
         print(f"Downloading {name}...")
         
         try:
             with requests.get(download_url, stream=True) as r:
                 if r.status_code == 404:
-                    print(f"Error: {name} not found in the latest release. Check the file name case/spelling.")
+                    print(f"Error: {name} not found in the {version} release. Check the file name case/spelling.")
                     continue
                 r.raise_for_status()
                 
@@ -104,6 +106,13 @@ def main():
         help="Optional name for initialization",
         default=default_name or "default-plug"
     )
+    use_parser = subparsers.add_parser("use", help="Use bindings of the provided version")
+    use_parser.add_argument(
+        "version", 
+        nargs="?",
+        default="latest", 
+        help="The version to use"
+    )
 
     args = parser.parse_args()
 
@@ -121,9 +130,12 @@ def main():
         write_file(".gitignore", DEFAULT_GITIGNORE)
 
         print("Downloading bindings...")
-        download_assets("Byson94", "plug-in-c.ewwii");
+        download_assets("Byson94", "plug-in-c.ewwii", "latest");
         
         print(f"Initialized '{args.name}' in current directory.")
+    elif args.command == "use":
+        print("Downloading bindings...")
+        download_assets("Byson94", "plug-in-c.ewwii", args.version);
     else:
         parser.print_help()
 
