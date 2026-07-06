@@ -20,5 +20,10 @@ You can run this command to install `plugc-ewwii` locally:
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Byson94/plug-in-c.ewwii/refs/heads/main/plugc-ewwii/install.sh)"
 ```
 
-This installs `plugc-ewwii` to `~/.local/bin/plugc-ewwii`. If you are unable to use it, make sure that 
-this directory is in PATH.
+This installs `plugc-ewwii` to `~/.local/bin/plugc-ewwii`. You can verify that its installed by printing help:
+
+```bash 
+plugc-ewwii --help
+```
+
+If it throws an error saying that it cannot find plugc-ewwii, make sure that the `~/.local/bin/` directory is in $PATH.
