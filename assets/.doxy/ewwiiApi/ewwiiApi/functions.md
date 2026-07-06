@@ -22,13 +22,8 @@
 
 ## p
 
-* **plugin\_init** ([**ewwii.h**](ewwii_8h.md), [**plug.c**](plug_8c.md), [**plugin.c**](plugin_8c.md))
-* **plugin\_metadata** ([**ewwii.h**](ewwii_8h.md), [**plug.c**](plug_8c.md), [**plugin.c**](plugin_8c.md))
-
-
-## t
-
-* **test\_func** ([**plug.c**](plug_8c.md))
+* **plugin\_init** ([**ewwii.h**](ewwii_8h.md))
+* **plugin\_metadata** ([**ewwii.h**](ewwii_8h.md))
 
 
 

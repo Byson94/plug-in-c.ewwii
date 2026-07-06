@@ -96,9 +96,9 @@
   <option  id='SORT_BY_SCOPE_NAME' default='yes' type='bool'><value>NO</value></option>
   <option  id='STRICT_PROTO_MATCHING' default='yes' type='bool'><value>NO</value></option>
   <option  id='GENERATE_TODOLIST' default='yes' type='bool'><value>YES</value></option>
-  <option  id='GENERATE_TESTLIST' default='yes' type='bool'><value>YES</value></option>
-  <option  id='GENERATE_BUGLIST' default='yes' type='bool'><value>YES</value></option>
-  <option  id='GENERATE_DEPRECATEDLIST' default='yes' type='bool'><value>YES</value></option>
+  <option  id='GENERATE_TESTLIST' default='no' type='bool'><value>NO</value></option>
+  <option  id='GENERATE_BUGLIST' default='no' type='bool'><value>NO</value></option>
+  <option  id='GENERATE_DEPRECATEDLIST' default='no' type='bool'><value>NO</value></option>
   <option  id='ENABLED_SECTIONS' default='yes' type='stringlist'>
   </option>
   <option  id='MAX_INITIALIZER_LINES' default='yes' type='int'><value>30</value></option>
@@ -126,59 +126,10 @@
   <option  id='INPUT_ENCODING' default='yes' type='string'><value><![CDATA[UTF-8]]></value></option>
   <option  id='INPUT_FILE_ENCODING' default='yes' type='stringlist'>
   </option>
-  <option  id='FILE_PATTERNS' default='yes' type='stringlist'>
-    <value><![CDATA[*.c]]></value>
-    <value><![CDATA[*.cc]]></value>
-    <value><![CDATA[*.cxx]]></value>
-    <value><![CDATA[*.cxxm]]></value>
-    <value><![CDATA[*.cpp]]></value>
-    <value><![CDATA[*.cppm]]></value>
-    <value><![CDATA[*.c++]]></value>
-    <value><![CDATA[*.c++m]]></value>
-    <value><![CDATA[*.java]]></value>
-    <value><![CDATA[*.ii]]></value>
-    <value><![CDATA[*.ixx]]></value>
-    <value><![CDATA[*.ipp]]></value>
-    <value><![CDATA[*.i++]]></value>
-    <value><![CDATA[*.inl]]></value>
-    <value><![CDATA[*.idl]]></value>
-    <value><![CDATA[*.ddl]]></value>
-    <value><![CDATA[*.odl]]></value>
-    <value><![CDATA[*.h]]></value>
-    <value><![CDATA[*.hh]]></value>
-    <value><![CDATA[*.hxx]]></value>
-    <value><![CDATA[*.hpp]]></value>
-    <value><![CDATA[*.h++]]></value>
-    <value><![CDATA[*.ixx]]></value>
-    <value><![CDATA[*.l]]></value>
-    <value><![CDATA[*.cs]]></value>
-    <value><![CDATA[*.d]]></value>
-    <value><![CDATA[*.php]]></value>
-    <value><![CDATA[*.php4]]></value>
-    <value><![CDATA[*.php5]]></value>
-    <value><![CDATA[*.phtml]]></value>
-    <value><![CDATA[*.inc]]></value>
-    <value><![CDATA[*.m]]></value>
-    <value><![CDATA[*.markdown]]></value>
-    <value><![CDATA[*.md]]></value>
-    <value><![CDATA[*.mm]]></value>
-    <value><![CDATA[*.dox]]></value>
-    <value><![CDATA[*.py]]></value>
-    <value><![CDATA[*.pyw]]></value>
-    <value><![CDATA[*.f90]]></value>
-    <value><![CDATA[*.f95]]></value>
-    <value><![CDATA[*.f03]]></value>
-    <value><![CDATA[*.f08]]></value>
-    <value><![CDATA[*.f18]]></value>
-    <value><![CDATA[*.f]]></value>
-    <value><![CDATA[*.for]]></value>
-    <value><![CDATA[*.vhd]]></value>
-    <value><![CDATA[*.vhdl]]></value>
-    <value><![CDATA[*.ucf]]></value>
-    <value><![CDATA[*.qsf]]></value>
-    <value><![CDATA[*.ice]]></value>
+  <option  id='FILE_PATTERNS' default='no' type='stringlist'>
+    <value><![CDATA[ewwii.h]]></value>
   </option>
-  <option  id='RECURSIVE' default='no' type='bool'><value>YES</value></option>
+  <option  id='RECURSIVE' default='yes' type='bool'><value>NO</value></option>
   <option  id='EXCLUDE' default='yes' type='stringlist'>
   </option>
   <option  id='EXCLUDE_SYMLINKS' default='yes' type='bool'><value>NO</value></option>

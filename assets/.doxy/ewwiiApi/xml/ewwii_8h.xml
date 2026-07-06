@@ -6,8 +6,6 @@
     <includes local="no">stdbool.h</includes>
     <includes local="no">stdint.h</includes>
     <includes local="no">stdlib.h</includes>
-    <includedby refid="plug_8c" local="yes">plug.c</includedby>
-    <includedby refid="plugin_8c" local="yes">plugc-ewwii/test/src/plugin.c</includedby>
     <incdepgraph>
       <node id="1">
         <label>ewwii.h</label>
@@ -654,7 +652,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ewwii.h" line="158" column="25" bodyfile="plug.c" bodystart="5" bodyend="10" declfile="ewwii.h" declline="158" declcolumn="25"/>
+        <location file="ewwii.h" line="158" column="25" declfile="ewwii.h" declline="158" declcolumn="25"/>
       </memberdef>
       <memberdef kind="function" id="ewwii_8h_1a58164e35bba80f6a51c6f1c02cff51a8" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -671,7 +669,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ewwii.h" line="160" column="13" bodyfile="plug.c" bodystart="18" bodyend="25" declfile="ewwii.h" declline="160" declcolumn="13"/>
+        <location file="ewwii.h" line="160" column="13" declfile="ewwii.h" declline="160" declcolumn="13"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

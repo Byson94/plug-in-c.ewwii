@@ -13,12 +13,6 @@
     <member refid="structRawMetadata_1a432615f06e6c39d427816ec3b62fa28b" kind="variable"><name>id</name></member>
     <member refid="structRawMetadata_1a57e41ad536a9295eb39291e0308f57af" kind="variable"><name>version</name></member>
   </compound>
-  <compound refid="creating-your-plugin_8md" kind="file"><name>creating-your-plugin.md</name>
-  </compound>
-  <compound refid="getting-started_8md" kind="file"><name>getting-started.md</name>
-  </compound>
-  <compound refid="index_8md" kind="file"><name>index.md</name>
-  </compound>
   <compound refid="ewwii_8h" kind="file"><name>ewwii.h</name>
     <member refid="ewwii_8h_1ab21755309c7204b997daa79299e2ae71" kind="typedef"><name>HostHandle</name></member>
     <member refid="ewwii_8h_1aa30389fdad3f2b91cb852ae5a0be88a8" kind="typedef"><name>CRuntimePaths</name></member>
@@ -39,36 +33,5 @@
     <member refid="ewwii_8h_1a6e7439dff864d476ddf793d2d6312c07" kind="function"><name>ewwii_api_version</name></member>
     <member refid="ewwii_8h_1a2fcbaee96f7bba53f00e3333eb3c26af" kind="function"><name>plugin_metadata</name></member>
     <member refid="ewwii_8h_1a58164e35bba80f6a51c6f1c02cff51a8" kind="function"><name>plugin_init</name></member>
-  </compound>
-  <compound refid="plug_8c" kind="file"><name>plug.c</name>
-    <member refid="plug_8c_1ac9367b3a474f943a9c2fe0dc8228a809" kind="function"><name>plugin_metadata</name></member>
-    <member refid="plug_8c_1a0493cbbd5f49e67c80a04b2cb53cde5e" kind="function"><name>test_func</name></member>
-    <member refid="plug_8c_1a58164e35bba80f6a51c6f1c02cff51a8" kind="function"><name>plugin_init</name></member>
-  </compound>
-  <compound refid="plugin_8c" kind="file"><name>plugin.c</name>
-    <member refid="plugin_8c_1ac9367b3a474f943a9c2fe0dc8228a809" kind="function"><name>plugin_metadata</name></member>
-    <member refid="plugin_8c_1a58164e35bba80f6a51c6f1c02cff51a8" kind="function"><name>plugin_init</name></member>
-  </compound>
-  <compound refid="examples_2README_8md" kind="file"><name>README.md</name>
-  </compound>
-  <compound refid="README_8md" kind="file"><name>README.md</name>
-  </compound>
-  <compound refid="md_docs_2creating-your-plugin" kind="page"><name>md_docs_2creating-your-plugin</name>
-  </compound>
-  <compound refid="md_docs_2getting-started" kind="page"><name>md_docs_2getting-started</name>
-  </compound>
-  <compound refid="md_examples_2README" kind="page"><name>md_examples_2README</name>
-  </compound>
-  <compound refid="md_README" kind="page"><name>md_README</name>
-  </compound>
-  <compound refid="dir_49e56c817e5e54854c35e136979f97ca" kind="dir"><name>docs</name>
-  </compound>
-  <compound refid="dir_d28a4824dc47e487b107a5db32ef43c4" kind="dir"><name>examples</name>
-  </compound>
-  <compound refid="dir_c0686db14fc2b0ffea2c0908b8a6159a" kind="dir"><name>plugc-ewwii</name>
-  </compound>
-  <compound refid="dir_4785b39e4c916e9d8debc5856b2221b0" kind="dir"><name>plugc-ewwii/test/src</name>
-  </compound>
-  <compound refid="dir_dc67d04d6112947ffeac385740190ebf" kind="dir"><name>plugc-ewwii/test</name>
   </compound>
 </doxygenindex>
