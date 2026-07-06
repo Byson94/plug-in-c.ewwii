@@ -74,3 +74,4 @@ nav:
       - Installation: getting-started.md
       - Creating your plugin: creating-your-plugin.md
       - C API Reference: api.md
+      - C Header Source: source.md

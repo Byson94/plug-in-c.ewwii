@@ -50,6 +50,16 @@ jobs:
           
           rm -rf xml/
 
+      - name: Save Header Source
+        run: |
+          OUT="docs/source.md"
+
+          mkdir -p docs
+          echo "# Header Source" > "$OUT"
+          echo '```c' >> "$OUT"
+          cat ewwii.h >> "$OUT"
+          echo '```' >> "$OUT"
+
       - name: Build MkDocs Site
         run: |
           mkdocs build

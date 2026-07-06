@@ -57,7 +57,7 @@ void ewwii_error(const struct HostHandle *handle, const char *msg);
  *
  * @param handle The host handle 
  * @param css The css string to inject 
- * @future_handler A function to call when the CSS ID is resolved
+ * @param future_handler A function to call when the CSS ID is resolved
  */
 void ewwii_inject_css(const struct HostHandle *handle,
                       const char *css,
@@ -83,7 +83,7 @@ void ewwii_inject_nbcl(const struct HostHandle *handle, const char *nbcl);
  * Get the runtime paths like the configuration directory, socket file, etc.
  *
  * @param handle The host handle 
- * @future_handler The function to call when the CRuntimePaths are resolved
+ * @param future_handler The function to call when the CRuntimePaths are resolved
  */
 void ewwii_get_runtime_paths(const struct HostHandle *handle,
                              void (*future_handler)(const struct HostHandle*,
@@ -93,8 +93,8 @@ void ewwii_get_runtime_paths(const struct HostHandle *handle,
  * Emit a message which other plugins can see and work with the provided data.
  *
  * @param handle The host handle 
- * @signal The signal to emit 
- * @data The data to attach with the signal
+ * @param signal The signal to emit 
+ * @param data The data to attach with the signal
  */
 void ewwii_emit(const struct HostHandle *handle, const char *signal, const char *data);
 
