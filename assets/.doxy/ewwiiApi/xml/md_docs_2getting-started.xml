@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="md_docs_2getting-started" kind="page">
+    <compoundname>md_docs_2getting-started</compoundname>
+    <title>Getting Started</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md_docs_2getting-started_1autotoc_md1"/> Plug In C is a comprehensive C binding for writing plugins for <ulink url="https//ewwii-sh.github.io">ewwii</ulink> in the C and C++ programming languages. Most modern languages support C through FFI (Foreign Function Interface), so this project can be extended to make bindings for other languages like <ulink url="https://go.dev">Go</ulink>.</para>
+<sect1 id="md_docs_2getting-started_1autotoc_md2">
+<title>Installation</title>
+<para>There are two critical files that are required to make the C bindings work:</para>
+<para><orderedlist>
+<listitem><para>The <computeroutput><ref refid="ewwii_8h_source" kindref="compound">ewwii.h</ref></computeroutput> file (C API).</para>
+</listitem><listitem><para>The <computeroutput>libpluginc-ewwii.a</computeroutput> file (Rust bridge).</para>
+</listitem></orderedlist>
+</para>
+<para>You can set it up manually, but we highly advice you to use our tool which will handle initialization, and managing of the C bindings a breeze.</para>
+<para>You can run this command to install <computeroutput>plugc-ewwii</computeroutput> locally:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">sh<sp/>-c<sp/>&quot;$(curl<sp/>-fsSL<sp/>https://raw.githubusercontent.com/Byson94/plug-in-c.ewwii/refs/heads/main/plugc-ewwii/install.sh)&quot;</highlight></codeline>
+</programlisting> </para>
+</sect1>
+    </detaileddescription>
+    <location file="docs/getting-started.md"/>
+  </compounddef>
+</doxygen>

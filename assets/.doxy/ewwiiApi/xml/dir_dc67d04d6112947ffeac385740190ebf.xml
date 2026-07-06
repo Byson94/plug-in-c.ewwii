@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_dc67d04d6112947ffeac385740190ebf" kind="dir">
+    <compoundname>plugc-ewwii/test</compoundname>
+    <innerdir refid="dir_4785b39e4c916e9d8debc5856b2221b0">plugc-ewwii/test/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="plugc-ewwii/test/"/>
+  </compounddef>
+</doxygen>
