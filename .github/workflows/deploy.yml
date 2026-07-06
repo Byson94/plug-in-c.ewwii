@@ -21,7 +21,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y doxygen
 
-      - name: Set up Node.js (for Moxygen)
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -38,7 +38,7 @@ jobs:
         run: |
           pip install mkdocs mkdocs-material
 
-      - name: Generate XML via Doxygen and Convert via Moxygen
+      - name: Generate API Reference Docs
         run: |
           printf "INPUT=ewwii.h\nOPTIMIZE_OUTPUT_FOR_C=YES\nGENERATE_XML=YES\nGENERATE_HTML=NO\nGENERATE_LATEX=NO\nXML_OUTPUT=xml" | doxygen -
           
