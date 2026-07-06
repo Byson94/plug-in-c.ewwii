@@ -95,7 +95,7 @@
   <option  id='SORT_GROUP_NAMES' default='yes' type='bool'><value>NO</value></option>
   <option  id='SORT_BY_SCOPE_NAME' default='yes' type='bool'><value>NO</value></option>
   <option  id='STRICT_PROTO_MATCHING' default='yes' type='bool'><value>NO</value></option>
-  <option  id='GENERATE_TODOLIST' default='yes' type='bool'><value>YES</value></option>
+  <option  id='GENERATE_TODOLIST' default='no' type='bool'><value>NO</value></option>
   <option  id='GENERATE_TESTLIST' default='no' type='bool'><value>NO</value></option>
   <option  id='GENERATE_BUGLIST' default='no' type='bool'><value>NO</value></option>
   <option  id='GENERATE_DEPRECATEDLIST' default='no' type='bool'><value>NO</value></option>
@@ -104,7 +104,7 @@
   <option  id='MAX_INITIALIZER_LINES' default='yes' type='int'><value>30</value></option>
   <option  id='SHOW_USED_FILES' default='yes' type='bool'><value>YES</value></option>
   <option  id='SHOW_FILES' default='yes' type='bool'><value>YES</value></option>
-  <option  id='SHOW_NAMESPACES' default='yes' type='bool'><value>YES</value></option>
+  <option  id='SHOW_NAMESPACES' default='no' type='bool'><value>NO</value></option>
   <option  id='FILE_VERSION_FILTER' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='LAYOUT_FILE' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='CITE_BIB_FILES' default='yes' type='stringlist'>
@@ -162,13 +162,13 @@
   <option  id='REFERENCES_LINK_SOURCE' default='yes' type='bool'><value>YES</value></option>
   <option  id='SOURCE_TOOLTIPS' default='yes' type='bool'><value>YES</value></option>
   <option  id='USE_HTAGS' default='yes' type='bool'><value>NO</value></option>
-  <option  id='VERBATIM_HEADERS' default='yes' type='bool'><value>YES</value></option>
+  <option  id='VERBATIM_HEADERS' default='no' type='bool'><value>NO</value></option>
   <option  id='CLANG_ASSISTED_PARSING' default='yes' type='bool'><value>NO</value></option>
   <option  id='CLANG_ADD_INC_PATHS' default='yes' type='bool'><value>YES</value></option>
   <option  id='CLANG_OPTIONS' default='yes' type='stringlist'>
   </option>
   <option  id='CLANG_DATABASE_PATH' default='yes' type='string'><value><![CDATA[]]></value></option>
-  <option  id='ALPHABETICAL_INDEX' default='yes' type='bool'><value>YES</value></option>
+  <option  id='ALPHABETICAL_INDEX' default='no' type='bool'><value>NO</value></option>
   <option  id='IGNORE_PREFIX' default='yes' type='stringlist'>
   </option>
   <option  id='GENERATE_HTML' default='no' type='bool'><value>NO</value></option>
@@ -213,7 +213,7 @@
   <option  id='QHG_LOCATION' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='GENERATE_ECLIPSEHELP' default='yes' type='bool'><value>NO</value></option>
   <option  id='ECLIPSE_DOC_ID' default='yes' type='string'><value><![CDATA[org.doxygen.Project]]></value></option>
-  <option  id='DISABLE_INDEX' default='yes' type='bool'><value>NO</value></option>
+  <option  id='DISABLE_INDEX' default='no' type='bool'><value>YES</value></option>
   <option  id='GENERATE_TREEVIEW' default='yes' type='bool'><value>NO</value></option>
   <option  id='FULL_SIDEBAR' default='yes' type='bool'><value>NO</value></option>
   <option  id='ENUM_VALUES_PER_LINE' default='yes' type='int'><value>4</value></option>
@@ -323,7 +323,7 @@
   <option  id='CALL_GRAPH' default='yes' type='bool'><value>NO</value></option>
   <option  id='CALLER_GRAPH' default='yes' type='bool'><value>NO</value></option>
   <option  id='GRAPHICAL_HIERARCHY' default='yes' type='bool'><value>YES</value></option>
-  <option  id='DIRECTORY_GRAPH' default='yes' type='bool'><value>YES</value></option>
+  <option  id='DIRECTORY_GRAPH' default='no' type='bool'><value>NO</value></option>
   <option  id='DIR_GRAPH_MAX_DEPTH' default='yes' type='int'><value>1</value></option>
   <option  id='DOT_IMAGE_FORMAT' default='yes' type='string'><value>png</value></option>
   <option  id='INTERACTIVE_SVG' default='yes' type='bool'><value>NO</value></option>

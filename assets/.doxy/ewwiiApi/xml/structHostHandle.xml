@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structHostHandle" kind="struct" language="C++" prot="public">
     <compoundname>HostHandle</compoundname>
-    <includes refid="ewwii_8h" local="no">ewwii.h</includes>
+    <includes local="no">ewwii.h</includes>
     <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structHostHandle_1a4e75a5f0abf5fcece8498226cb74247b" prot="public" static="no" mutable="no">
         <type>const void *</type>

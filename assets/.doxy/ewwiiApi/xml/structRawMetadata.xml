@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structRawMetadata" kind="struct" language="C++" prot="public">
     <compoundname>RawMetadata</compoundname>
-    <includes refid="ewwii_8h" local="no">ewwii.h</includes>
+    <includes local="no">ewwii.h</includes>
     <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structRawMetadata_1a432615f06e6c39d427816ec3b62fa28b" prot="public" static="no" mutable="no">
         <type>const char *</type>

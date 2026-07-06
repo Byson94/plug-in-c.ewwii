@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structCRuntimePaths" kind="struct" language="C++" prot="public">
     <compoundname>CRuntimePaths</compoundname>
-    <includes refid="ewwii_8h" local="no">ewwii.h</includes>
+    <includes local="no">ewwii.h</includes>
     <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structCRuntimePaths_1a77953907c8dacbd9d59230dbff614cd5" prot="public" static="no" mutable="no">
         <type>const char *</type>
