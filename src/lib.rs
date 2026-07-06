@@ -181,8 +181,6 @@ pub unsafe extern "C" fn ewwii_emit(
     });
 }
 
-pub type CListenCallback = unsafe extern "C" fn(*const c_char, *const c_char);
-
 /// Listen to emissions made by other plugins and ewwii itself.
 ///
 /// @param handle The host handle
@@ -192,7 +190,7 @@ pub type CListenCallback = unsafe extern "C" fn(*const c_char, *const c_char);
 pub unsafe extern "C" fn ewwii_listen(
     handle: *const HostHandle,
     signal: *const c_char,
-    callback: CListenCallback,
+    callback: extern "C" fn(*const c_char, *const c_char),
 ) {
     call!({
         let host = unsafe { (*handle).as_api() };
@@ -204,9 +202,7 @@ pub unsafe extern "C" fn ewwii_listen(
                 let c_pid = std::ffi::CString::new(info.pid).unwrap_or_default();
                 let c_data = std::ffi::CString::new(info.data).unwrap_or_default();
 
-                unsafe {
-                    callback(c_pid.as_ptr(), c_data.as_ptr());
-                }
+                callback(c_pid.as_ptr(), c_data.as_ptr());
             }),
         );
     });

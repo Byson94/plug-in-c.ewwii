@@ -20,8 +20,6 @@ typedef struct CRuntimePaths {
   const char *config_dir;
 } CRuntimePaths;
 
-typedef void (*CListenCallback)(const char*, const char*);
-
 /**
  * Metadata of the plugin to register.
  */
@@ -107,7 +105,9 @@ void ewwii_emit(const struct HostHandle *handle, const char *signal, const char 
  * @param signal The signal to listen to 
  * @param callback The function to call when emission is found
  */
-void ewwii_listen(const struct HostHandle *handle, const char *signal, CListenCallback callback);
+void ewwii_listen(const struct HostHandle *handle,
+                  const char *signal,
+                  void (*callback)(const char*, const char*));
 
 /**
  * Register a signal (GlobalVar) to ewwii which can be accessed from configuration.
