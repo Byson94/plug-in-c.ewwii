@@ -56,6 +56,7 @@ pub fn start_string_worker(
     });
 }
 
+/// Runtime paths of ewwii containing important information such as `config_dir`, `log_file`, etc.
 #[repr(C)]
 pub struct CRuntimePaths {
     pub log_file: *const c_char,

@@ -9,6 +9,7 @@ use ewwii_plugin_api::{EwwiiAPI, ListenHandleFn, ListenHandleFnExt};
 use future::CRuntimePaths;
 use std::ffi::{CStr, c_char, c_void};
 
+/// Host handle required for calling back to ewwii.
 #[repr(C)]
 pub struct HostHandle {
     pub inner: *const c_void,
@@ -22,6 +23,7 @@ impl HostHandle {
     }
 }
 
+/// Metadata of the plugin to register.
 #[repr(C)]
 pub struct RawMetadata {
     pub id: *const c_char,
@@ -30,7 +32,7 @@ pub struct RawMetadata {
 
 // === General API ===
 
-/// @breif Log a message
+/// @brief Log a message
 ///
 /// Log a message to ewwii with the appropriate plugin ID visible.
 ///
@@ -47,7 +49,7 @@ pub unsafe extern "C" fn ewwii_log(handle: *const HostHandle, msg: *const c_char
     });
 }
 
-/// @breif Log a warning
+/// @brief Log a warning
 ///
 /// Log a warning to ewwii with the appropriate plugin ID visible.
 ///
@@ -64,7 +66,7 @@ pub unsafe extern "C" fn ewwii_warn(handle: *const HostHandle, msg: *const c_cha
     });
 }
 
-/// @breif Log an error
+/// @brief Log an error
 ///
 /// Log an error to ewwii with the appropriate plugin ID visible.
 ///
@@ -83,7 +85,7 @@ pub unsafe extern "C" fn ewwii_error(handle: *const HostHandle, msg: *const c_ch
 
 // === Injections ===
 
-/// @breif Inject custom CSS
+/// @brief Inject custom CSS
 ///
 /// Inject CSS into the core ewwii engine and handle the resulting CSS ID.
 ///
@@ -110,7 +112,7 @@ pub unsafe extern "C" fn ewwii_inject_css(
     }
 }
 
-/// @breif Remove an injected CSS 
+/// @brief Remove an injected CSS 
 ///
 /// Remove an injected CSS from ewwii using the resolved CSS ID.
 ///
@@ -127,7 +129,7 @@ pub unsafe extern "C" fn ewwii_remove_css(handle: *const HostHandle, idx_ptr: *m
     });
 }
 
-/// @breif Inject nbcl
+/// @brief Inject nbcl
 ///
 /// Inject nbcl into ewwii.
 ///
@@ -146,7 +148,7 @@ pub unsafe extern "C" fn ewwii_inject_nbcl(handle: *const HostHandle, nbcl: *con
 
 // === Getters ===
 
-/// @breif Get the runtime paths
+/// @brief Get the runtime paths
 ///
 /// Get the runtime paths like the configuration directory, socket file, etc.
 ///
@@ -172,7 +174,7 @@ pub unsafe extern "C" fn ewwii_get_runtime_paths(
 
 // === Emissions & Listening ===
 
-/// @breif Emit a message
+/// @brief Emit a message
 ///
 /// Emit a message which other plugins can see and work with the provided data.
 ///
@@ -197,7 +199,7 @@ pub unsafe extern "C" fn ewwii_emit(
 
 pub type CListenCallback = unsafe extern "C" fn(*const c_char, *const c_char);
 
-/// @breif Listen to emissions 
+/// @brief Listen to emissions 
 ///
 /// Listen to emissions made by other plugins and ewwii itself.
 ///
@@ -230,7 +232,7 @@ pub unsafe extern "C" fn ewwii_listen(
 
 // === Signals API ===
 
-/// @breif Register a signal (GlobalVar)
+/// @brief Register a signal (GlobalVar)
 ///
 /// Register a signal (GlobalVar) to ewwii which can be accessed from configuration.
 ///
@@ -251,7 +253,7 @@ pub unsafe extern "C" fn ewwii_register_signal(
     });
 }
 
-/// @breif Update the value of a signal (GlobalVar)
+/// @brief Update the value of a signal (GlobalVar)
 ///
 /// Update the value of a signal (Global).
 ///
@@ -272,7 +274,7 @@ pub unsafe extern "C" fn ewwii_update_signal(
     });
 }
 
-/// @breif Get the value of a signal (GlobalVar)
+/// @brief Get the value of a signal (GlobalVar)
 ///
 /// Get the value of a signal (GlobalVar) and do callback.
 ///
