@@ -38,6 +38,7 @@ DEFAULT_MAKEFILE = textwrap.dedent('''
 
     $(PLUGIN_OUT): $(SOURCES)
     \t$(CC) $(CFLAGS) -o $@ $^ $(RUST_BRIDGE) $(LDFLAGS)
+    \tstrip --strip-all $@
 
     clean:
     \trm $(PLUGIN_OUT)
