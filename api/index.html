@@ -16,6 +16,8 @@
         <link rel="prev" href="../creating-your-plugin/">
       
       
+        <link rel="next" href="../source/">
+      
       
         
       
@@ -357,6 +359,8 @@
   
     
     
+      
+        
       
         
       
@@ -1119,6 +1123,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Header Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1847,7 +1879,10 @@
 <p><code>handle</code> The host handle </p>
 </li>
 <li>
-<p><code>css</code> The css string to inject @future_handler A function to call when the CSS ID is resolved</p>
+<p><code>css</code> The css string to inject </p>
+</li>
+<li>
+<p><code>future_handler</code> A function to call when the CSS ID is resolved</p>
 </li>
 </ul>
 <h4 id="ewwii_remove_css">ewwii_remove_css<a class="headerlink" href="#ewwii_remove_css" title="Permanent link">&para;</a></h4>
@@ -1882,7 +1917,12 @@
 <p>Get the runtime paths like the configuration directory, socket file, etc.</p>
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
-<li><code>handle</code> The host handle @future_handler The function to call when the <a href="#cruntimepaths_1">CRuntimePaths</a> are resolved</li>
+<li>
+<p><code>handle</code> The host handle </p>
+</li>
+<li>
+<p><code>future_handler</code> The function to call when the <a href="#cruntimepaths_1">CRuntimePaths</a> are resolved</p>
+</li>
 </ul>
 <h4 id="ewwii_emit">ewwii_emit<a class="headerlink" href="#ewwii_emit" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">ewwii_emit</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">signal</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">)</span>
@@ -1890,7 +1930,15 @@
 <p>Emit a message which other plugins can see and work with the provided data.</p>
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
-<li><code>handle</code> The host handle @signal The signal to emit @data The data to attach with the signal</li>
+<li>
+<p><code>handle</code> The host handle </p>
+</li>
+<li>
+<p><code>signal</code> The signal to emit </p>
+</li>
+<li>
+<p><code>data</code> The data to attach with the signal</p>
+</li>
 </ul>
 <h4 id="ewwii_listen">ewwii_listen<a class="headerlink" href="#ewwii_listen" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">ewwii_listen</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">signal</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">callback</span><span class="p">)</span>
@@ -2214,6 +2262,22 @@
             </div>
           </a>
         
+        
+          
+          <a href="../source/" class="md-footer__link md-footer__link--next" aria-label="Next: C Header Source">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                C Header Source
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
