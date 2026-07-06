@@ -91,6 +91,22 @@ def download_assets(owner, repo, version):
         except Exception as e:
             print(f"Failed to download {name}: {e}")
 
+def list_release_index(owner, repo):
+    file = "release-index.json"
+    index = f"https://github.com/{owner}/{repo}/raw/refs/heads/main/.github/{file}"
+
+    try:
+        r = requests.get(index)
+        r.raise_for_status() 
+        
+        release_index = r.json()
+        for release, ewwii_ver in release_index.items():
+            print(f"Release: {release} => ewwii: {ewwii_ver}")
+            
+        return release_index
+    except Exception as e:
+        print(f"Failed to fetch release index: {e}")
+
 def main():
     parser = argparse.ArgumentParser(description="plugc-ewwii CLI")
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
@@ -113,8 +129,12 @@ def main():
         default="latest", 
         help="The version to use"
     )
+    subparsers.add_parser("list", help="List all bindings and ewwii version compatibility")
 
     args = parser.parse_args()
+
+    OWNER = "Byson94"
+    REPO = "plug-in-c.ewwii"
 
     if args.command == "init":
         if len(os.listdir(os.getcwd())) != 0:
@@ -135,7 +155,9 @@ def main():
         print(f"Initialized '{args.name}' in current directory.")
     elif args.command == "use":
         print("Downloading bindings...")
-        download_assets("Byson94", "plug-in-c.ewwii", args.version);
+        download_assets(OWNER, REPO, args.version);
+    elif args.command == "list":
+        list_release_index(OWNER, REPO)
     else:
         parser.print_help()
 
