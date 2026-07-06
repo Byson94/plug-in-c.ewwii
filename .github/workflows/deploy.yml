@@ -16,10 +16,18 @@ jobs:
       - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: Install Dependencies
+      - name: Install System Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y doxygen graphviz
+          sudo apt-get install -y doxygen
+
+      - name: Set up Node.js (for Moxygen)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Moxygen
+        run: npm install -g moxygen
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,18 +38,18 @@ jobs:
         run: |
           pip install mkdocs mkdocs-material
 
-      - name: Generate Doxygen Configuration and Docs
+      - name: Generate XML via Doxygen and Convert via Moxygen
         run: |
-          printf "INPUT=ewwii.h\nOPTIMIZE_OUTPUT_FOR_C=YES\nGENERATE_HTML=YES\nGENERATE_LATEX=NO\nHTML_OUTPUT=doxygen_out" | doxygen -
+          printf "INPUT=ewwii.h\nOPTIMIZE_OUTPUT_FOR_C=YES\nGENERATE_XML=YES\nGENERATE_HTML=NO\nGENERATE_LATEX=NO\nXML_OUTPUT=xml" | doxygen -
+          
+          mkdir -p docs
+          moxygen --output docs/api.md xml/
+          
+          rm -rf xml/
 
       - name: Build MkDocs Site
         run: |
           mkdocs build
-
-      - name: Integrate Doxygen into MkDocs Build
-        run: |
-          mkdir -p site/doxygen
-          cp -r doxygen_out/* site/doxygen/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

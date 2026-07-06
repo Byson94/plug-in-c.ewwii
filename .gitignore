@@ -1,3 +1,5 @@
 *.so
 target/
 site/
+xml_out/
+xml/

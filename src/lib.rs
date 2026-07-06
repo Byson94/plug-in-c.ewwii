@@ -83,7 +83,7 @@ pub unsafe extern "C" fn ewwii_error(handle: *const HostHandle, msg: *const c_ch
 
 // === Injections ===
 
-/// @bref Inject custom CSS
+/// @breif Inject custom CSS
 ///
 /// Inject CSS into the core ewwii engine and handle the resulting CSS ID.
 ///
