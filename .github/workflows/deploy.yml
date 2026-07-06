@@ -44,6 +44,9 @@ jobs:
           
           mkdir -p docs
           moxygen --output docs/api.md xml/
+
+          # Fixing link suffix
+          sed -i 's/-1/_1/g' docs/api.md
           
           rm -rf xml/
 

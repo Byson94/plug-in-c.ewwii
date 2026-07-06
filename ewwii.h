@@ -3,10 +3,16 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+/**
+ * Host handle required for calling back to ewwii.
+ */
 typedef struct HostHandle {
   const void *inner;
 } HostHandle;
 
+/**
+ * Runtime paths of ewwii containing important information such as `config_dir`, `log_file`, etc.
+ */
 typedef struct CRuntimePaths {
   const char *log_file;
   const char *log_dir;
@@ -16,13 +22,16 @@ typedef struct CRuntimePaths {
 
 typedef void (*CListenCallback)(const char*, const char*);
 
+/**
+ * Metadata of the plugin to register.
+ */
 typedef struct RawMetadata {
   const char *id;
   const char *version;
 } RawMetadata;
 
 /**
- * @breif Log a message
+ * @brief Log a message
  *
  * Log a message to ewwii with the appropriate plugin ID visible.
  *
@@ -32,7 +41,7 @@ typedef struct RawMetadata {
 void ewwii_log(const struct HostHandle *handle, const char *msg);
 
 /**
- * @breif Log a warning
+ * @brief Log a warning
  *
  * Log a warning to ewwii with the appropriate plugin ID visible.
  *
@@ -42,7 +51,7 @@ void ewwii_log(const struct HostHandle *handle, const char *msg);
 void ewwii_warn(const struct HostHandle *handle, const char *msg);
 
 /**
- * @breif Log an error
+ * @brief Log an error
  *
  * Log an error to ewwii with the appropriate plugin ID visible.
  *
@@ -52,7 +61,7 @@ void ewwii_warn(const struct HostHandle *handle, const char *msg);
 void ewwii_error(const struct HostHandle *handle, const char *msg);
 
 /**
- * @bref Inject custom CSS
+ * @brief Inject custom CSS
  *
  * Inject CSS into the core ewwii engine and handle the resulting CSS ID.
  *
@@ -65,7 +74,7 @@ void ewwii_inject_css(const struct HostHandle *handle,
                       void (*future_handler)(const struct HostHandle*, uint64_t*));
 
 /**
- * @breif Remove an injected CSS 
+ * @brief Remove an injected CSS 
  *
  * Remove an injected CSS from ewwii using the resolved CSS ID.
  *
@@ -75,7 +84,7 @@ void ewwii_inject_css(const struct HostHandle *handle,
 void ewwii_remove_css(const struct HostHandle *handle, uint64_t *idx_ptr);
 
 /**
- * @breif Inject nbcl
+ * @brief Inject nbcl
  *
  * Inject nbcl into ewwii.
  *
@@ -85,7 +94,7 @@ void ewwii_remove_css(const struct HostHandle *handle, uint64_t *idx_ptr);
 void ewwii_inject_nbcl(const struct HostHandle *handle, const char *nbcl);
 
 /**
- * @breif Get the runtime paths
+ * @brief Get the runtime paths
  *
  * Get the runtime paths like the configuration directory, socket file, etc.
  *
@@ -97,7 +106,7 @@ void ewwii_get_runtime_paths(const struct HostHandle *handle,
                                                     const struct CRuntimePaths*));
 
 /**
- * @breif Emit a message
+ * @brief Emit a message
  *
  * Emit a message which other plugins can see and work with the provided data.
  *
@@ -108,7 +117,7 @@ void ewwii_get_runtime_paths(const struct HostHandle *handle,
 void ewwii_emit(const struct HostHandle *handle, const char *signal, const char *data);
 
 /**
- * @breif Listen to emissions 
+ * @brief Listen to emissions 
  *
  * Listen to emissions made by other plugins and ewwii itself.
  *
@@ -119,7 +128,7 @@ void ewwii_emit(const struct HostHandle *handle, const char *signal, const char 
 void ewwii_listen(const struct HostHandle *handle, const char *signal, CListenCallback callback);
 
 /**
- * @breif Register a signal (GlobalVar)
+ * @brief Register a signal (GlobalVar)
  *
  * Register a signal (GlobalVar) to ewwii which can be accessed from configuration.
  *
@@ -130,7 +139,7 @@ void ewwii_listen(const struct HostHandle *handle, const char *signal, CListenCa
 void ewwii_register_signal(const struct HostHandle *handle, const char *name, const char *initial);
 
 /**
- * @breif Update the value of a signal (GlobalVar)
+ * @brief Update the value of a signal (GlobalVar)
  *
  * Update the value of a signal (Global).
  *
@@ -141,7 +150,7 @@ void ewwii_register_signal(const struct HostHandle *handle, const char *name, co
 void ewwii_update_signal(const struct HostHandle *handle, const char *name, const char *value);
 
 /**
- * @breif Get the value of a signal (GlobalVar)
+ * @brief Get the value of a signal (GlobalVar)
  *
  * Get the value of a signal (GlobalVar) and do callback.
  *
