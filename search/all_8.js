@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['toc_0',['- toc',['../index.html#autotoc_md1',1,'']]]
+  ['started_0',['Getting Started',['../md_docs_2getting-started.html',1,'']]]
 ];

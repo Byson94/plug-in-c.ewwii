@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['my_20project_0',['My Project',['../index.html',1,'']]]
+  ['in_20c_0',['Plug-In-C',['../index.html',1,'']]]
 ];

@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: ewwii.h Source File</title>
+<title>Plug-In-C: ewwii.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">Plug-In-C
    </div>
   </td>
  </tr>
@@ -53,6 +57,22 @@ $(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('ewwii_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,77 +98,104 @@ $(document).ready(function() { init_codefold(0); });
   <div class="headertitle"><div class="title">ewwii.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;stdarg.h&gt;</span></div>
+<a href="ewwii_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;stdarg.h&gt;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structHostHandle.html">    9</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structHostHandle.html">HostHandle</a> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">const</span> <span class="keywordtype">void</span> *inner;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>} <a class="code hl_struct" href="structHostHandle.html">HostHandle</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structHostHandle.html#a4e75a5f0abf5fcece8498226cb74247b">   10</a></span>  <span class="keyword">const</span> <span class="keywordtype">void</span> *<a class="code hl_variable" href="structHostHandle.html#a4e75a5f0abf5fcece8498226cb74247b">inner</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="ewwii_8h.html#ab21755309c7204b997daa79299e2ae71">   11</a></span>} <a class="code hl_struct" href="structHostHandle.html">HostHandle</a>;</div>
 </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structCRuntimePaths.html">   16</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structCRuntimePaths.html">CRuntimePaths</a> {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *log_file;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *log_dir;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *ipc_socket_file;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *config_dir;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>} <a class="code hl_struct" href="structCRuntimePaths.html">CRuntimePaths</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structCRuntimePaths.html#a77953907c8dacbd9d59230dbff614cd5">   17</a></span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="structCRuntimePaths.html#a77953907c8dacbd9d59230dbff614cd5">log_file</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structCRuntimePaths.html#a4d1429c848209449eafd8fae5e2da26c">   18</a></span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="structCRuntimePaths.html#a4d1429c848209449eafd8fae5e2da26c">log_dir</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structCRuntimePaths.html#a8422bd2879fbd7675d8d9a14e42d638e">   19</a></span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="structCRuntimePaths.html#a8422bd2879fbd7675d8d9a14e42d638e">ipc_socket_file</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structCRuntimePaths.html#acbcec201e0e803d82162fde2705f2ec9">   20</a></span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="structCRuntimePaths.html#acbcec201e0e803d82162fde2705f2ec9">config_dir</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="ewwii_8h.html#aa30389fdad3f2b91cb852ae5a0be88a8">   21</a></span>} <a class="code hl_struct" href="structCRuntimePaths.html">CRuntimePaths</a>;</div>
 </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">typedef</span> void (*CListenCallback)(<span class="keyword">const</span> <span class="keywordtype">char</span>*, <span class="keyword">const</span> <span class="keywordtype">char</span>*);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a85314e79e2664db4baffabef7eaf797e">   23</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="ewwii_8h.html#a85314e79e2664db4baffabef7eaf797e">CListenCallback</a>)(<span class="keyword">const</span> <span class="keywordtype">char</span>*, <span class="keyword">const</span> <span class="keywordtype">char</span>*);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structRawMetadata.html">   28</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structRawMetadata.html">RawMetadata</a> {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *id;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *version;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>} <a class="code hl_struct" href="structRawMetadata.html">RawMetadata</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structRawMetadata.html#a432615f06e6c39d427816ec3b62fa28b">   29</a></span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="structRawMetadata.html#a432615f06e6c39d427816ec3b62fa28b">id</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structRawMetadata.html#a57e41ad536a9295eb39291e0308f57af">   30</a></span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="structRawMetadata.html#a57e41ad536a9295eb39291e0308f57af">version</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a12303eb47d80452d30df71c342b9f2cb">   31</a></span>} <a class="code hl_struct" href="structRawMetadata.html">RawMetadata</a>;</div>
 </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keywordtype">void</span> ewwii_log(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *msg);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a59528508834b2cdaeeab483fa5cf8b94">   39</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ewwii_8h.html#a59528508834b2cdaeeab483fa5cf8b94">ewwii_log</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *msg);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">void</span> ewwii_warn(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *msg);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a8c60e217857d261ac866ac5d4477fe3a">   47</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ewwii_8h.html#a8c60e217857d261ac866ac5d4477fe3a">ewwii_warn</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *msg);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keywordtype">void</span> ewwii_error(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *msg);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="ewwii_8h.html#ae22ef66621af4d20689e917092d96ddd">   55</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ewwii_8h.html#ae22ef66621af4d20689e917092d96ddd">ewwii_error</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *msg);</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">void</span> ewwii_inject_css(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a130ed0de8c5b8efbe5143714369bc6cc">   64</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ewwii_8h.html#a130ed0de8c5b8efbe5143714369bc6cc">ewwii_inject_css</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle,</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                      <span class="keyword">const</span> <span class="keywordtype">char</span> *css,</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                      <span class="keywordtype">void</span> (*future_handler)(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a>*, uint64_t*));</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keywordtype">void</span> ewwii_remove_css(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, uint64_t *idx_ptr);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a8c1b0c1ce4229b5fdc9aecd7c7e8d76c">   74</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ewwii_8h.html#a8c1b0c1ce4229b5fdc9aecd7c7e8d76c">ewwii_remove_css</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, uint64_t *idx_ptr);</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keywordtype">void</span> ewwii_inject_nbcl(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *nbcl);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a5ed687f3bc5fc6fbe49b6df9ba33f19e">   82</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ewwii_8h.html#a5ed687f3bc5fc6fbe49b6df9ba33f19e">ewwii_inject_nbcl</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *nbcl);</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keywordtype">void</span> ewwii_get_runtime_paths(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="ewwii_8h.html#aa3a38ed4e599aaff56c4be2c1da54e66">   90</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ewwii_8h.html#aa3a38ed4e599aaff56c4be2c1da54e66">ewwii_get_runtime_paths</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle,</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                             <span class="keywordtype">void</span> (*future_handler)(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a>*,</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                                                    <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structCRuntimePaths.html">CRuntimePaths</a>*));</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keywordtype">void</span> ewwii_emit(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *signal, <span class="keyword">const</span> <span class="keywordtype">char</span> *data);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a7edec9f2d76fddfc705344fcb00bf48f">  101</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ewwii_8h.html#a7edec9f2d76fddfc705344fcb00bf48f">ewwii_emit</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *signal, <span class="keyword">const</span> <span class="keywordtype">char</span> *data);</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keywordtype">void</span> ewwii_listen(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *signal, CListenCallback callback);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a101d95f578b02d43ebb81fd3c12ca529">  110</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ewwii_8h.html#a101d95f578b02d43ebb81fd3c12ca529">ewwii_listen</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *signal, <a class="code hl_typedef" href="ewwii_8h.html#a85314e79e2664db4baffabef7eaf797e">CListenCallback</a> callback);</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keywordtype">void</span> ewwii_register_signal(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keyword">const</span> <span class="keywordtype">char</span> *initial);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a1508835216ae1165794ac1e469b551a4">  119</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ewwii_8h.html#a1508835216ae1165794ac1e469b551a4">ewwii_register_signal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keyword">const</span> <span class="keywordtype">char</span> *initial);</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keywordtype">void</span> ewwii_update_signal(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keyword">const</span> <span class="keywordtype">char</span> *value);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a70f266350fd01ca72a83a6d1774e46b0">  128</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ewwii_8h.html#a70f266350fd01ca72a83a6d1774e46b0">ewwii_update_signal</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle, <span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keyword">const</span> <span class="keywordtype">char</span> *value);</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="keywordtype">void</span> ewwii_signal_value(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle,</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a9c41c0f118d5dd8f907877f4e3888584">  137</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ewwii_8h.html#a9c41c0f118d5dd8f907877f4e3888584">ewwii_signal_value</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *handle,</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                        <span class="keyword">const</span> <span class="keywordtype">char</span> *name,</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                        <span class="keywordtype">void</span> (*future_handler)(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a>*, <span class="keyword">const</span> <span class="keywordtype">char</span>*));</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="keyword">const</span> <span class="keywordtype">char</span> *ewwii_api_version(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a6e7439dff864d476ddf793d2d6312c07">  141</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="ewwii_8h.html#a6e7439dff864d476ddf793d2d6312c07">ewwii_api_version</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structRawMetadata.html">RawMetadata</a> plugin_metadata(void);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a2fcbaee96f7bba53f00e3333eb3c26af">  143</a></span><span class="keyword">extern</span> <span class="keyword">struct </span><a class="code hl_struct" href="structRawMetadata.html">RawMetadata</a> <a class="code hl_function" href="ewwii_8h.html#a2fcbaee96f7bba53f00e3333eb3c26af">plugin_metadata</a>(void);</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="keyword">extern</span> <span class="keywordtype">void</span> plugin_init(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *host);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="ewwii_8h.html#a58164e35bba80f6a51c6f1c02cff51a8">  145</a></span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="ewwii_8h.html#a58164e35bba80f6a51c6f1c02cff51a8">plugin_init</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="structHostHandle.html">HostHandle</a> *host);</div>
+<div class="ttc" id="aewwii_8h_html_a101d95f578b02d43ebb81fd3c12ca529"><div class="ttname"><a href="ewwii_8h.html#a101d95f578b02d43ebb81fd3c12ca529">ewwii_listen</a></div><div class="ttdeci">void ewwii_listen(const struct HostHandle *handle, const char *signal, CListenCallback callback)</div></div>
+<div class="ttc" id="aewwii_8h_html_a130ed0de8c5b8efbe5143714369bc6cc"><div class="ttname"><a href="ewwii_8h.html#a130ed0de8c5b8efbe5143714369bc6cc">ewwii_inject_css</a></div><div class="ttdeci">void ewwii_inject_css(const struct HostHandle *handle, const char *css, void(*future_handler)(const struct HostHandle *, uint64_t *))</div></div>
+<div class="ttc" id="aewwii_8h_html_a1508835216ae1165794ac1e469b551a4"><div class="ttname"><a href="ewwii_8h.html#a1508835216ae1165794ac1e469b551a4">ewwii_register_signal</a></div><div class="ttdeci">void ewwii_register_signal(const struct HostHandle *handle, const char *name, const char *initial)</div></div>
+<div class="ttc" id="aewwii_8h_html_a2fcbaee96f7bba53f00e3333eb3c26af"><div class="ttname"><a href="ewwii_8h.html#a2fcbaee96f7bba53f00e3333eb3c26af">plugin_metadata</a></div><div class="ttdeci">struct RawMetadata plugin_metadata(void)</div></div>
+<div class="ttc" id="aewwii_8h_html_a58164e35bba80f6a51c6f1c02cff51a8"><div class="ttname"><a href="ewwii_8h.html#a58164e35bba80f6a51c6f1c02cff51a8">plugin_init</a></div><div class="ttdeci">void plugin_init(const struct HostHandle *host)</div></div>
+<div class="ttc" id="aewwii_8h_html_a59528508834b2cdaeeab483fa5cf8b94"><div class="ttname"><a href="ewwii_8h.html#a59528508834b2cdaeeab483fa5cf8b94">ewwii_log</a></div><div class="ttdeci">void ewwii_log(const struct HostHandle *handle, const char *msg)</div></div>
+<div class="ttc" id="aewwii_8h_html_a5ed687f3bc5fc6fbe49b6df9ba33f19e"><div class="ttname"><a href="ewwii_8h.html#a5ed687f3bc5fc6fbe49b6df9ba33f19e">ewwii_inject_nbcl</a></div><div class="ttdeci">void ewwii_inject_nbcl(const struct HostHandle *handle, const char *nbcl)</div></div>
+<div class="ttc" id="aewwii_8h_html_a6e7439dff864d476ddf793d2d6312c07"><div class="ttname"><a href="ewwii_8h.html#a6e7439dff864d476ddf793d2d6312c07">ewwii_api_version</a></div><div class="ttdeci">const char * ewwii_api_version(void)</div></div>
+<div class="ttc" id="aewwii_8h_html_a70f266350fd01ca72a83a6d1774e46b0"><div class="ttname"><a href="ewwii_8h.html#a70f266350fd01ca72a83a6d1774e46b0">ewwii_update_signal</a></div><div class="ttdeci">void ewwii_update_signal(const struct HostHandle *handle, const char *name, const char *value)</div></div>
+<div class="ttc" id="aewwii_8h_html_a7edec9f2d76fddfc705344fcb00bf48f"><div class="ttname"><a href="ewwii_8h.html#a7edec9f2d76fddfc705344fcb00bf48f">ewwii_emit</a></div><div class="ttdeci">void ewwii_emit(const struct HostHandle *handle, const char *signal, const char *data)</div></div>
+<div class="ttc" id="aewwii_8h_html_a85314e79e2664db4baffabef7eaf797e"><div class="ttname"><a href="ewwii_8h.html#a85314e79e2664db4baffabef7eaf797e">CListenCallback</a></div><div class="ttdeci">void(* CListenCallback)(const char *, const char *)</div><div class="ttdef"><b>Definition</b> ewwii.h:23</div></div>
+<div class="ttc" id="aewwii_8h_html_a8c1b0c1ce4229b5fdc9aecd7c7e8d76c"><div class="ttname"><a href="ewwii_8h.html#a8c1b0c1ce4229b5fdc9aecd7c7e8d76c">ewwii_remove_css</a></div><div class="ttdeci">void ewwii_remove_css(const struct HostHandle *handle, uint64_t *idx_ptr)</div></div>
+<div class="ttc" id="aewwii_8h_html_a8c60e217857d261ac866ac5d4477fe3a"><div class="ttname"><a href="ewwii_8h.html#a8c60e217857d261ac866ac5d4477fe3a">ewwii_warn</a></div><div class="ttdeci">void ewwii_warn(const struct HostHandle *handle, const char *msg)</div></div>
+<div class="ttc" id="aewwii_8h_html_a9c41c0f118d5dd8f907877f4e3888584"><div class="ttname"><a href="ewwii_8h.html#a9c41c0f118d5dd8f907877f4e3888584">ewwii_signal_value</a></div><div class="ttdeci">void ewwii_signal_value(const struct HostHandle *handle, const char *name, void(*future_handler)(const struct HostHandle *, const char *))</div></div>
+<div class="ttc" id="aewwii_8h_html_aa3a38ed4e599aaff56c4be2c1da54e66"><div class="ttname"><a href="ewwii_8h.html#aa3a38ed4e599aaff56c4be2c1da54e66">ewwii_get_runtime_paths</a></div><div class="ttdeci">void ewwii_get_runtime_paths(const struct HostHandle *handle, void(*future_handler)(const struct HostHandle *, const struct CRuntimePaths *))</div></div>
+<div class="ttc" id="aewwii_8h_html_ae22ef66621af4d20689e917092d96ddd"><div class="ttname"><a href="ewwii_8h.html#ae22ef66621af4d20689e917092d96ddd">ewwii_error</a></div><div class="ttdeci">void ewwii_error(const struct HostHandle *handle, const char *msg)</div></div>
 <div class="ttc" id="astructCRuntimePaths_html"><div class="ttname"><a href="structCRuntimePaths.html">CRuntimePaths</a></div><div class="ttdef"><b>Definition</b> ewwii.h:16</div></div>
+<div class="ttc" id="astructCRuntimePaths_html_a4d1429c848209449eafd8fae5e2da26c"><div class="ttname"><a href="structCRuntimePaths.html#a4d1429c848209449eafd8fae5e2da26c">CRuntimePaths::log_dir</a></div><div class="ttdeci">const char * log_dir</div><div class="ttdef"><b>Definition</b> ewwii.h:18</div></div>
+<div class="ttc" id="astructCRuntimePaths_html_a77953907c8dacbd9d59230dbff614cd5"><div class="ttname"><a href="structCRuntimePaths.html#a77953907c8dacbd9d59230dbff614cd5">CRuntimePaths::log_file</a></div><div class="ttdeci">const char * log_file</div><div class="ttdef"><b>Definition</b> ewwii.h:17</div></div>
+<div class="ttc" id="astructCRuntimePaths_html_a8422bd2879fbd7675d8d9a14e42d638e"><div class="ttname"><a href="structCRuntimePaths.html#a8422bd2879fbd7675d8d9a14e42d638e">CRuntimePaths::ipc_socket_file</a></div><div class="ttdeci">const char * ipc_socket_file</div><div class="ttdef"><b>Definition</b> ewwii.h:19</div></div>
+<div class="ttc" id="astructCRuntimePaths_html_acbcec201e0e803d82162fde2705f2ec9"><div class="ttname"><a href="structCRuntimePaths.html#acbcec201e0e803d82162fde2705f2ec9">CRuntimePaths::config_dir</a></div><div class="ttdeci">const char * config_dir</div><div class="ttdef"><b>Definition</b> ewwii.h:20</div></div>
 <div class="ttc" id="astructHostHandle_html"><div class="ttname"><a href="structHostHandle.html">HostHandle</a></div><div class="ttdef"><b>Definition</b> ewwii.h:9</div></div>
+<div class="ttc" id="astructHostHandle_html_a4e75a5f0abf5fcece8498226cb74247b"><div class="ttname"><a href="structHostHandle.html#a4e75a5f0abf5fcece8498226cb74247b">HostHandle::inner</a></div><div class="ttdeci">const void * inner</div><div class="ttdef"><b>Definition</b> ewwii.h:10</div></div>
 <div class="ttc" id="astructRawMetadata_html"><div class="ttname"><a href="structRawMetadata.html">RawMetadata</a></div><div class="ttdef"><b>Definition</b> ewwii.h:28</div></div>
+<div class="ttc" id="astructRawMetadata_html_a432615f06e6c39d427816ec3b62fa28b"><div class="ttname"><a href="structRawMetadata.html#a432615f06e6c39d427816ec3b62fa28b">RawMetadata::id</a></div><div class="ttdeci">const char * id</div><div class="ttdef"><b>Definition</b> ewwii.h:29</div></div>
+<div class="ttc" id="astructRawMetadata_html_a57e41ad536a9295eb39291e0308f57af"><div class="ttname"><a href="structRawMetadata.html#a57e41ad536a9295eb39291e0308f57af">RawMetadata::version</a></div><div class="ttdeci">const char * version</div><div class="ttdef"><b>Definition</b> ewwii.h:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="ewwii_8h.html">ewwii.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

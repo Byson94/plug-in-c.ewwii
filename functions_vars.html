@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Plug-In-C: Getting Started</title>
+<title>Plug-In-C: Data Fields - Variables</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('md_docs_2getting-started.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('functions_vars.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -89,23 +89,17 @@ $(document).ready(function(){initNavTree('md_docs_2getting-started.html',''); in
 </div>
 </div>
 
-<div><div class="header">
-  <div class="headertitle"><div class="title">Getting Started</div></div>
-</div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a> Plug In C is a comprehensive C binding for writing plugins for <a href="https//ewwii-sh.github.io">ewwii</a> in the C and C++ programming languages. Most modern languages support C through FFI (Foreign Function Interface), so this project can be extended to make bindings for other languages like <a href="https://go.dev">Go</a>.</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
-Installation</h1>
-<p>There are two critical files that are required to make the C bindings work:</p>
-<ol type="1">
-<li>The <code><a class="el" href="ewwii_8h.html">ewwii.h</a></code> file (C API).</li>
-<li>The <code>libpluginc-ewwii.a</code> file (Rust bridge).</li>
-</ol>
-<p>You can set it up manually, but we highly advice you to use our tool which will handle initialization, and managing of the C bindings a breeze.</p>
-<p>You can run this command to install <code>plugc-ewwii</code> locally:</p>
-<div class="fragment"><div class="line">sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Byson94/plug-in-c.ewwii/refs/heads/main/plugc-ewwii/install.sh)&quot;</div>
-</div><!-- fragment --> </div></div><!-- contents -->
-</div><!-- PageDoc -->
+<div class="textblock">Here is a list of all variables with links to the structures/unions they belong to:</div><ul>
+<li>config_dir&#160;:&#160;<a class="el" href="structCRuntimePaths.html#acbcec201e0e803d82162fde2705f2ec9">CRuntimePaths</a></li>
+<li>id&#160;:&#160;<a class="el" href="structRawMetadata.html#a432615f06e6c39d427816ec3b62fa28b">RawMetadata</a></li>
+<li>inner&#160;:&#160;<a class="el" href="structHostHandle.html#a4e75a5f0abf5fcece8498226cb74247b">HostHandle</a></li>
+<li>ipc_socket_file&#160;:&#160;<a class="el" href="structCRuntimePaths.html#a8422bd2879fbd7675d8d9a14e42d638e">CRuntimePaths</a></li>
+<li>log_dir&#160;:&#160;<a class="el" href="structCRuntimePaths.html#a4d1429c848209449eafd8fae5e2da26c">CRuntimePaths</a></li>
+<li>log_file&#160;:&#160;<a class="el" href="structCRuntimePaths.html#a77953907c8dacbd9d59230dbff614cd5">CRuntimePaths</a></li>
+<li>version&#160;:&#160;<a class="el" href="structRawMetadata.html#a57e41ad536a9295eb39291e0308f57af">RawMetadata</a></li>
+</ul>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

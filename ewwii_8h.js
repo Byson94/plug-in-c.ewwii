@@ -1,0 +1,25 @@
+var ewwii_8h =
+[
+    [ "HostHandle", "structHostHandle.html", "structHostHandle" ],
+    [ "CRuntimePaths", "structCRuntimePaths.html", "structCRuntimePaths" ],
+    [ "RawMetadata", "structRawMetadata.html", "structRawMetadata" ],
+    [ "CListenCallback", "ewwii_8h.html#a85314e79e2664db4baffabef7eaf797e", null ],
+    [ "CRuntimePaths", "ewwii_8h.html#aa30389fdad3f2b91cb852ae5a0be88a8", null ],
+    [ "HostHandle", "ewwii_8h.html#ab21755309c7204b997daa79299e2ae71", null ],
+    [ "RawMetadata", "ewwii_8h.html#a12303eb47d80452d30df71c342b9f2cb", null ],
+    [ "ewwii_api_version", "ewwii_8h.html#a6e7439dff864d476ddf793d2d6312c07", null ],
+    [ "ewwii_emit", "ewwii_8h.html#a7edec9f2d76fddfc705344fcb00bf48f", null ],
+    [ "ewwii_error", "ewwii_8h.html#ae22ef66621af4d20689e917092d96ddd", null ],
+    [ "ewwii_get_runtime_paths", "ewwii_8h.html#aa3a38ed4e599aaff56c4be2c1da54e66", null ],
+    [ "ewwii_inject_css", "ewwii_8h.html#a130ed0de8c5b8efbe5143714369bc6cc", null ],
+    [ "ewwii_inject_nbcl", "ewwii_8h.html#a5ed687f3bc5fc6fbe49b6df9ba33f19e", null ],
+    [ "ewwii_listen", "ewwii_8h.html#a101d95f578b02d43ebb81fd3c12ca529", null ],
+    [ "ewwii_log", "ewwii_8h.html#a59528508834b2cdaeeab483fa5cf8b94", null ],
+    [ "ewwii_register_signal", "ewwii_8h.html#a1508835216ae1165794ac1e469b551a4", null ],
+    [ "ewwii_remove_css", "ewwii_8h.html#a8c1b0c1ce4229b5fdc9aecd7c7e8d76c", null ],
+    [ "ewwii_signal_value", "ewwii_8h.html#a9c41c0f118d5dd8f907877f4e3888584", null ],
+    [ "ewwii_update_signal", "ewwii_8h.html#a70f266350fd01ca72a83a6d1774e46b0", null ],
+    [ "ewwii_warn", "ewwii_8h.html#a8c60e217857d261ac866ac5d4477fe3a", null ],
+    [ "plugin_init", "ewwii_8h.html#a58164e35bba80f6a51c6f1c02cff51a8", null ],
+    [ "plugin_metadata", "ewwii_8h.html#a2fcbaee96f7bba53f00e3333eb3c26af", null ]
+];
