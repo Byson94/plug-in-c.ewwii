@@ -11,7 +11,7 @@ typedef struct HostHandle {
 } HostHandle;
 
 /**
- * Runtime paths of ewwii containing important information such as `config_dir`, `log_file`, etc.
+ * Paths to important dirs/files like confiuration directory.
  */
 typedef struct CRuntimePaths {
   const char *log_file;
@@ -31,8 +31,6 @@ typedef struct RawMetadata {
 } RawMetadata;
 
 /**
- * @brief Log a message
- *
  * Log a message to ewwii with the appropriate plugin ID visible.
  *
  * @param handle The host handle 
@@ -41,8 +39,6 @@ typedef struct RawMetadata {
 void ewwii_log(const struct HostHandle *handle, const char *msg);
 
 /**
- * @brief Log a warning
- *
  * Log a warning to ewwii with the appropriate plugin ID visible.
  *
  * @param handle The host handle 
@@ -51,8 +47,6 @@ void ewwii_log(const struct HostHandle *handle, const char *msg);
 void ewwii_warn(const struct HostHandle *handle, const char *msg);
 
 /**
- * @brief Log an error
- *
  * Log an error to ewwii with the appropriate plugin ID visible.
  *
  * @param handle The host handle 
@@ -61,8 +55,6 @@ void ewwii_warn(const struct HostHandle *handle, const char *msg);
 void ewwii_error(const struct HostHandle *handle, const char *msg);
 
 /**
- * @brief Inject custom CSS
- *
  * Inject CSS into the core ewwii engine and handle the resulting CSS ID.
  *
  * @param handle The host handle 
@@ -74,8 +66,6 @@ void ewwii_inject_css(const struct HostHandle *handle,
                       void (*future_handler)(const struct HostHandle*, uint64_t*));
 
 /**
- * @brief Remove an injected CSS 
- *
  * Remove an injected CSS from ewwii using the resolved CSS ID.
  *
  * @param handle The host handle 
@@ -84,8 +74,6 @@ void ewwii_inject_css(const struct HostHandle *handle,
 void ewwii_remove_css(const struct HostHandle *handle, uint64_t *idx_ptr);
 
 /**
- * @brief Inject nbcl
- *
  * Inject nbcl into ewwii.
  *
  * @param handle The host handle 
@@ -94,8 +82,6 @@ void ewwii_remove_css(const struct HostHandle *handle, uint64_t *idx_ptr);
 void ewwii_inject_nbcl(const struct HostHandle *handle, const char *nbcl);
 
 /**
- * @brief Get the runtime paths
- *
  * Get the runtime paths like the configuration directory, socket file, etc.
  *
  * @param handle The host handle 
@@ -106,8 +92,6 @@ void ewwii_get_runtime_paths(const struct HostHandle *handle,
                                                     const struct CRuntimePaths*));
 
 /**
- * @brief Emit a message
- *
  * Emit a message which other plugins can see and work with the provided data.
  *
  * @param handle The host handle 
@@ -117,8 +101,6 @@ void ewwii_get_runtime_paths(const struct HostHandle *handle,
 void ewwii_emit(const struct HostHandle *handle, const char *signal, const char *data);
 
 /**
- * @brief Listen to emissions 
- *
  * Listen to emissions made by other plugins and ewwii itself.
  *
  * @param handle The host handle
@@ -128,8 +110,6 @@ void ewwii_emit(const struct HostHandle *handle, const char *signal, const char 
 void ewwii_listen(const struct HostHandle *handle, const char *signal, CListenCallback callback);
 
 /**
- * @brief Register a signal (GlobalVar)
- *
  * Register a signal (GlobalVar) to ewwii which can be accessed from configuration.
  *
  * @param handle The host handle 
@@ -139,8 +119,6 @@ void ewwii_listen(const struct HostHandle *handle, const char *signal, CListenCa
 void ewwii_register_signal(const struct HostHandle *handle, const char *name, const char *initial);
 
 /**
- * @brief Update the value of a signal (GlobalVar)
- *
  * Update the value of a signal (Global).
  *
  * @param handle The host handle 
@@ -150,8 +128,6 @@ void ewwii_register_signal(const struct HostHandle *handle, const char *name, co
 void ewwii_update_signal(const struct HostHandle *handle, const char *name, const char *value);
 
 /**
- * @brief Get the value of a signal (GlobalVar)
- *
  * Get the value of a signal (GlobalVar) and do callback.
  *
  * @param handle The host handle 

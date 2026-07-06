@@ -1,6 +1,6 @@
 # Getting Started
 
-Plug In C is a comprehensive C binding for writing plugins for [ewwii](https//ewwii-sh.github.io) in the C 
+Plug In C is a comprehensive C binding for writing plugins for [ewwii](https://ewwii-sh.github.io) in the C 
 and C++ programming languages. Most modern languages support C through FFI (Foreign Function Interface),
 so this project can be extended to make bindings for other languages like [Go](https://go.dev).
 

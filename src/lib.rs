@@ -32,8 +32,6 @@ pub struct RawMetadata {
 
 // === General API ===
 
-/// @brief Log a message
-///
 /// Log a message to ewwii with the appropriate plugin ID visible.
 ///
 /// @param handle The host handle 
@@ -49,8 +47,6 @@ pub unsafe extern "C" fn ewwii_log(handle: *const HostHandle, msg: *const c_char
     });
 }
 
-/// @brief Log a warning
-///
 /// Log a warning to ewwii with the appropriate plugin ID visible.
 ///
 /// @param handle The host handle 
@@ -66,8 +62,6 @@ pub unsafe extern "C" fn ewwii_warn(handle: *const HostHandle, msg: *const c_cha
     });
 }
 
-/// @brief Log an error
-///
 /// Log an error to ewwii with the appropriate plugin ID visible.
 ///
 /// @param handle The host handle 
@@ -85,8 +79,6 @@ pub unsafe extern "C" fn ewwii_error(handle: *const HostHandle, msg: *const c_ch
 
 // === Injections ===
 
-/// @brief Inject custom CSS
-///
 /// Inject CSS into the core ewwii engine and handle the resulting CSS ID.
 ///
 /// @param handle The host handle 
@@ -112,8 +104,6 @@ pub unsafe extern "C" fn ewwii_inject_css(
     }
 }
 
-/// @brief Remove an injected CSS 
-///
 /// Remove an injected CSS from ewwii using the resolved CSS ID.
 ///
 /// @param handle The host handle 
@@ -129,8 +119,6 @@ pub unsafe extern "C" fn ewwii_remove_css(handle: *const HostHandle, idx_ptr: *m
     });
 }
 
-/// @brief Inject nbcl
-///
 /// Inject nbcl into ewwii.
 ///
 /// @param handle The host handle 
@@ -148,8 +136,6 @@ pub unsafe extern "C" fn ewwii_inject_nbcl(handle: *const HostHandle, nbcl: *con
 
 // === Getters ===
 
-/// @brief Get the runtime paths
-///
 /// Get the runtime paths like the configuration directory, socket file, etc.
 ///
 /// @param handle The host handle 
@@ -174,8 +160,6 @@ pub unsafe extern "C" fn ewwii_get_runtime_paths(
 
 // === Emissions & Listening ===
 
-/// @brief Emit a message
-///
 /// Emit a message which other plugins can see and work with the provided data.
 ///
 /// @param handle The host handle 
@@ -199,8 +183,6 @@ pub unsafe extern "C" fn ewwii_emit(
 
 pub type CListenCallback = unsafe extern "C" fn(*const c_char, *const c_char);
 
-/// @brief Listen to emissions 
-///
 /// Listen to emissions made by other plugins and ewwii itself.
 ///
 /// @param handle The host handle
@@ -232,8 +214,6 @@ pub unsafe extern "C" fn ewwii_listen(
 
 // === Signals API ===
 
-/// @brief Register a signal (GlobalVar)
-///
 /// Register a signal (GlobalVar) to ewwii which can be accessed from configuration.
 ///
 /// @param handle The host handle 
@@ -253,8 +233,6 @@ pub unsafe extern "C" fn ewwii_register_signal(
     });
 }
 
-/// @brief Update the value of a signal (GlobalVar)
-///
 /// Update the value of a signal (Global).
 ///
 /// @param handle The host handle 
@@ -274,8 +252,6 @@ pub unsafe extern "C" fn ewwii_update_signal(
     });
 }
 
-/// @brief Get the value of a signal (GlobalVar)
-///
 /// Get the value of a signal (GlobalVar) and do callback.
 ///
 /// @param handle The host handle 
