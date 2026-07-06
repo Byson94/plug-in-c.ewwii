@@ -83,7 +83,7 @@ pub unsafe extern "C" fn ewwii_error(handle: *const HostHandle, msg: *const c_ch
 ///
 /// @param handle The host handle 
 /// @param css The css string to inject 
-/// @future_handler A function to call when the CSS ID is resolved
+/// @param future_handler A function to call when the CSS ID is resolved
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_inject_css(
     handle: *const HostHandle,
@@ -139,7 +139,7 @@ pub unsafe extern "C" fn ewwii_inject_nbcl(handle: *const HostHandle, nbcl: *con
 /// Get the runtime paths like the configuration directory, socket file, etc.
 ///
 /// @param handle The host handle 
-/// @future_handler The function to call when the CRuntimePaths are resolved
+/// @param future_handler The function to call when the CRuntimePaths are resolved
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_get_runtime_paths(
     handle: *const HostHandle,
@@ -163,8 +163,8 @@ pub unsafe extern "C" fn ewwii_get_runtime_paths(
 /// Emit a message which other plugins can see and work with the provided data.
 ///
 /// @param handle The host handle 
-/// @signal The signal to emit 
-/// @data The data to attach with the signal
+/// @param signal The signal to emit 
+/// @param data The data to attach with the signal
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn ewwii_emit(
     handle: *const HostHandle,
