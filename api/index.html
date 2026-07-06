@@ -1793,16 +1793,16 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="#hosthandle-1"><code>HostHandle</code></a></td>
-<td></td>
+<td><a href="#hosthandle_1"><code>HostHandle</code></a></td>
+<td>Host handle required for calling back to ewwii.</td>
 </tr>
 <tr>
-<td><a href="#rawmetadata-1"><code>RawMetadata</code></a></td>
-<td></td>
+<td><a href="#rawmetadata_1"><code>RawMetadata</code></a></td>
+<td>Metadata of the plugin to register.</td>
 </tr>
 <tr>
-<td><a href="#cruntimepaths-1"><code>CRuntimePaths</code></a></td>
-<td></td>
+<td><a href="#cruntimepaths_1"><code>CRuntimePaths</code></a></td>
+<td>Runtime paths of ewwii containing important information such as <code>config_dir</code>, <code>log_file</code>, etc.</td>
 </tr>
 </tbody>
 </table>
@@ -1810,20 +1810,23 @@
 <h4 id="hosthandle">HostHandle<a class="headerlink" href="#hosthandle" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">using</span><span class="w"> </span><span class="n">HostHandle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span>
 </span></code></pre></div>
+<p>Host handle required for calling back to ewwii.</p>
 <h4 id="cruntimepaths">CRuntimePaths<a class="headerlink" href="#cruntimepaths" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">using</span><span class="w"> </span><span class="n">CRuntimePaths</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">CRuntimePaths</span>
 </span></code></pre></div>
+<p>Runtime paths of ewwii containing important information such as <code>config_dir</code>, <code>log_file</code>, etc.</p>
 <h4 id="clistencallback">CListenCallback<a class="headerlink" href="#clistencallback" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">using</span><span class="w"> </span><span class="n">CListenCallback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">void</span><span class="p">(</span><span class="o">*</span>
 </span></code></pre></div>
 <h4 id="rawmetadata">RawMetadata<a class="headerlink" href="#rawmetadata" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">using</span><span class="w"> </span><span class="n">RawMetadata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">RawMetadata</span>
 </span></code></pre></div>
+<p>Metadata of the plugin to register.</p>
 <h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <h4 id="ewwii_log">ewwii_log<a class="headerlink" href="#ewwii_log" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">ewwii_log</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
 </span></code></pre></div>
-<p>@breif Log a message</p>
+<p>Log a message.</p>
 <p>Log a message to ewwii with the appropriate plugin ID visible.</p>
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1837,7 +1840,7 @@
 <h4 id="ewwii_warn">ewwii_warn<a class="headerlink" href="#ewwii_warn" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">ewwii_warn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
 </span></code></pre></div>
-<p>@breif Log a warning</p>
+<p>Log a warning.</p>
 <p>Log a warning to ewwii with the appropriate plugin ID visible.</p>
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1851,7 +1854,7 @@
 <h4 id="ewwii_error">ewwii_error<a class="headerlink" href="#ewwii_error" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">ewwii_error</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span>
 </span></code></pre></div>
-<p>@breif Log an error</p>
+<p>Log an error.</p>
 <p>Log an error to ewwii with the appropriate plugin ID visible.</p>
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1865,7 +1868,7 @@
 <h4 id="ewwii_inject_css">ewwii_inject_css<a class="headerlink" href="#ewwii_inject_css" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">ewwii_inject_css</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">css</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">future_handler</span><span class="p">)</span>
 </span></code></pre></div>
-<p>@bref Inject custom CSS</p>
+<p>Inject custom CSS.</p>
 <p>Inject CSS into the core ewwii engine and handle the resulting CSS ID.</p>
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1879,7 +1882,7 @@
 <h4 id="ewwii_remove_css">ewwii_remove_css<a class="headerlink" href="#ewwii_remove_css" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">ewwii_remove_css</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">idx_ptr</span><span class="p">)</span>
 </span></code></pre></div>
-<p>@breif Remove an injected CSS</p>
+<p>Remove an injected CSS.</p>
 <p>Remove an injected CSS from ewwii using the resolved CSS ID.</p>
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1893,7 +1896,7 @@
 <h4 id="ewwii_inject_nbcl">ewwii_inject_nbcl<a class="headerlink" href="#ewwii_inject_nbcl" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">ewwii_inject_nbcl</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nbcl</span><span class="p">)</span>
 </span></code></pre></div>
-<p>@breif Inject nbcl</p>
+<p>Inject nbcl.</p>
 <p>Inject nbcl into ewwii.</p>
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1907,16 +1910,16 @@
 <h4 id="ewwii_get_runtime_paths">ewwii_get_runtime_paths<a class="headerlink" href="#ewwii_get_runtime_paths" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">ewwii_get_runtime_paths</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">CRuntimePaths</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">future_handler</span><span class="p">)</span>
 </span></code></pre></div>
-<p>@breif Get the runtime paths</p>
+<p>Get the runtime paths.</p>
 <p>Get the runtime paths like the configuration directory, socket file, etc.</p>
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
-<li><code>handle</code> The host handle @future_handler The function to call when the <a href="#cruntimepaths-1">CRuntimePaths</a> are resolved</li>
+<li><code>handle</code> The host handle @future_handler The function to call when the <a href="#cruntimepaths_1">CRuntimePaths</a> are resolved</li>
 </ul>
 <h4 id="ewwii_emit">ewwii_emit<a class="headerlink" href="#ewwii_emit" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">ewwii_emit</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">signal</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">)</span>
 </span></code></pre></div>
-<p>@breif Emit a message</p>
+<p>Emit a message.</p>
 <p>Emit a message which other plugins can see and work with the provided data.</p>
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1925,7 +1928,7 @@
 <h4 id="ewwii_listen">ewwii_listen<a class="headerlink" href="#ewwii_listen" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">ewwii_listen</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">signal</span><span class="p">,</span><span class="w"> </span><span class="n">CListenCallback</span><span class="w"> </span><span class="n">callback</span><span class="p">)</span>
 </span></code></pre></div>
-<p>@breif Listen to emissions</p>
+<p>Listen to emissions.</p>
 <p>Listen to emissions made by other plugins and ewwii itself.</p>
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1942,7 +1945,7 @@
 <h4 id="ewwii_register_signal">ewwii_register_signal<a class="headerlink" href="#ewwii_register_signal" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">ewwii_register_signal</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">initial</span><span class="p">)</span>
 </span></code></pre></div>
-<p>@breif Register a signal (GlobalVar)</p>
+<p>Register a signal (GlobalVar)</p>
 <p>Register a signal (GlobalVar) to ewwii which can be accessed from configuration.</p>
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1959,7 +1962,7 @@
 <h4 id="ewwii_update_signal">ewwii_update_signal<a class="headerlink" href="#ewwii_update_signal" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">ewwii_update_signal</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
 </span></code></pre></div>
-<p>@breif Update the value of a signal (GlobalVar)</p>
+<p>Update the value of a signal (GlobalVar)</p>
 <p>Update the value of a signal (Global).</p>
 <h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1976,7 +1979,7 @@
 <h4 id="ewwii_signal_value">ewwii_signal_value<a class="headerlink" href="#ewwii_signal_value" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">ewwii_signal_value</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">future_handler</span><span class="p">)</span>
 </span></code></pre></div>
-<p>@breif Get the value of a signal (GlobalVar)</p>
+<p>Get the value of a signal (GlobalVar)</p>
 <p>Get the value of a signal (GlobalVar) and do callback.</p>
 <h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2000,9 +2003,12 @@
 <div class="highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">plugin_init</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">host</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="hosthandle_1">HostHandle<a class="headerlink" href="#hosthandle_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span>
+<div class="highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ewwii.h&gt;</span>
 </span></code></pre></div>
-<p>Defined in ewwii.h:6</p>
+<div class="highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">HostHandle</span>
+</span></code></pre></div>
+<p>Defined in ewwii.h:9</p>
+<p>Host handle required for calling back to ewwii.</p>
 <h3 id="list-of-all-members">List of all members<a class="headerlink" href="#list-of-all-members" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -2039,13 +2045,16 @@
 </table>
 <hr />
 <h4 id="inner">inner<a class="headerlink" href="#inner" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">inner</span>
+<div class="highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">inner</span>
 </span></code></pre></div>
-<p>Defined in ewwii.h:7</p>
+<p>Defined in ewwii.h:10</p>
 <h2 id="rawmetadata_1">RawMetadata<a class="headerlink" href="#rawmetadata_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">RawMetadata</span>
+<div class="highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ewwii.h&gt;</span>
 </span></code></pre></div>
-<p>Defined in ewwii.h:19</p>
+<div class="highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">RawMetadata</span>
+</span></code></pre></div>
+<p>Defined in ewwii.h:28</p>
+<p>Metadata of the plugin to register.</p>
 <h3 id="list-of-all-members_1">List of all members<a class="headerlink" href="#list-of-all-members_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -2092,18 +2101,21 @@
 </table>
 <hr />
 <h4 id="id">id<a class="headerlink" href="#id" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">id</span>
+<div class="highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">id</span>
 </span></code></pre></div>
-<p>Defined in ewwii.h:20</p>
+<p>Defined in ewwii.h:29</p>
 <hr />
 <h4 id="version">version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">version</span>
+<div class="highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">version</span>
 </span></code></pre></div>
-<p>Defined in ewwii.h:21</p>
+<p>Defined in ewwii.h:30</p>
 <h2 id="cruntimepaths_1">CRuntimePaths<a class="headerlink" href="#cruntimepaths_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">CRuntimePaths</span>
+<div class="highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ewwii.h&gt;</span>
 </span></code></pre></div>
-<p>Defined in ewwii.h:10</p>
+<div class="highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">CRuntimePaths</span>
+</span></code></pre></div>
+<p>Defined in ewwii.h:16</p>
+<p>Runtime paths of ewwii containing important information such as <code>config_dir</code>, <code>log_file</code>, etc.</p>
 <h3 id="list-of-all-members_2">List of all members<a class="headerlink" href="#list-of-all-members_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -2170,24 +2182,24 @@
 </table>
 <hr />
 <h4 id="log_file">log_file<a class="headerlink" href="#log_file" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">log_file</span>
+<div class="highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">log_file</span>
 </span></code></pre></div>
-<p>Defined in ewwii.h:11</p>
+<p>Defined in ewwii.h:17</p>
 <hr />
 <h4 id="log_dir">log_dir<a class="headerlink" href="#log_dir" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">log_dir</span>
+<div class="highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">log_dir</span>
 </span></code></pre></div>
-<p>Defined in ewwii.h:12</p>
+<p>Defined in ewwii.h:18</p>
 <hr />
 <h4 id="ipc_socket_file">ipc_socket_file<a class="headerlink" href="#ipc_socket_file" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ipc_socket_file</span>
+<div class="highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ipc_socket_file</span>
 </span></code></pre></div>
-<p>Defined in ewwii.h:13</p>
+<p>Defined in ewwii.h:19</p>
 <hr />
 <h4 id="config_dir">config_dir<a class="headerlink" href="#config_dir" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">config_dir</span>
+<div class="highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">config_dir</span>
 </span></code></pre></div>
-<p>Defined in ewwii.h:14</p>
+<p>Defined in ewwii.h:20</p>
 <p>Generated by <a href="https://0state.com/moxygen">Moxygen</a></p>
 
 
