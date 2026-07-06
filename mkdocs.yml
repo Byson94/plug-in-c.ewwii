@@ -73,4 +73,4 @@ nav:
   - Getting Started:
       - Installation: getting-started.md
       - Creating your plugin: creating-your-plugin.md
-      - ewwii.h API's: api.md
+      - C API Reference: api.md
