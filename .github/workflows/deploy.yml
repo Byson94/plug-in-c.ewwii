@@ -64,6 +64,10 @@ jobs:
         run: |
           mkdocs build
 
+      - name: Copy install.sh
+        run: |
+          cp plugc-ewwii/install.sh site/install.sh
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:

@@ -17,7 +17,7 @@ initialization and managing of the C bindings a breeze.
 You can run this command to install `plugc-ewwii` locally:
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Byson94/plug-in-c.ewwii/refs/heads/main/plugc-ewwii/install.sh)"
+sh -c "$(curl -fsSL https://byson94.is-a.dev/plug-in-c.ewwii/install.sh)"
 ```
 
 This installs `plugc-ewwii` to `~/.local/bin/plugc-ewwii`. You can verify that its installed by printing help:
