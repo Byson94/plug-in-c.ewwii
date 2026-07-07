@@ -37,7 +37,7 @@ RawMetadata plugin_metadata(void) {
     info.id = "awesome-plugin";
     info.version = "1.0.0";
     return info;
-}}
+}
 
 void plugin_init(const struct HostHandle *host) {
     ewwii_log(host, "Hello from C!");
