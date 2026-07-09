@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://byson94.is-a.dev/plug-in-c.ewwii/</loc>
-         <lastmod>2026-07-07</lastmod>
+         <lastmod>2026-07-09</lastmod>
     </url>
     <url>
          <loc>https://byson94.is-a.dev/plug-in-c.ewwii/api/</loc>
-         <lastmod>2026-07-07</lastmod>
+         <lastmod>2026-07-09</lastmod>
     </url>
     <url>
          <loc>https://byson94.is-a.dev/plug-in-c.ewwii/creating-your-plugin/</loc>
-         <lastmod>2026-07-07</lastmod>
+         <lastmod>2026-07-09</lastmod>
+    </url>
+    <url>
+         <loc>https://byson94.is-a.dev/plug-in-c.ewwii/examples/</loc>
+         <lastmod>2026-07-09</lastmod>
     </url>
     <url>
          <loc>https://byson94.is-a.dev/plug-in-c.ewwii/getting-started/</loc>
-         <lastmod>2026-07-07</lastmod>
+         <lastmod>2026-07-09</lastmod>
     </url>
     <url>
          <loc>https://byson94.is-a.dev/plug-in-c.ewwii/source/</loc>
-         <lastmod>2026-07-07</lastmod>
+         <lastmod>2026-07-09</lastmod>
     </url>
 </urlset>
